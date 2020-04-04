@@ -34,7 +34,7 @@ vsp_carry = 0;
 myPlatform = noone;
 jumpThrough = false;
 movespeed = 1;
-max_hsp = 3;
+max_hsp = 3.5;
 grounded = 0;
 normal_grav = 1;
 jumps = 1;
@@ -43,7 +43,7 @@ jumpbuffer = 0;
 powerup = 0;
 canshoot = 0;
 crouch = 0;
-slideframes = 26;
+slideframes = 8;
 sliding = 0;
 slidoffground = 0
 airdrop = false;
@@ -502,11 +502,11 @@ if (sliding = 0) {
 if (act = 0) {
 if (crouch = 0) {
 if (key_left) { image_xscale = -1
-    if (hsp &gt; -3.5 * movespeed ) { hsp -= 0.20 * movespeed; }
+    if (hsp &gt; -max_hsp * movespeed ) { hsp -= 0.20 * movespeed; }
 }
 
 if (key_right) { image_xscale = 1
-    if (hsp &lt; 3.5 * movespeed) { hsp += 0.20 * movespeed; }
+    if (hsp &lt; max_hsp * movespeed) { hsp += 0.20 * movespeed; }
 }
 }
 }
@@ -515,11 +515,12 @@ if (key_right) { image_xscale = 1
 
 //Horizontal Stop
 
+if (sliding = 0) {
 if (!key_left &amp;&amp; !key_right) or (key_left &amp;&amp; key_right) {
     hsp += ( 0 - hsp ) * 0.1;
 
 }
-
+}
 
 //Gravity
 vsp += grav
@@ -660,7 +661,7 @@ if (crouch = 1 &amp;&amp; grounded = 0) {
 //Sliding
 if (swimming = 0) {
 if (crouch = 1 &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {   
-if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
+if (keyboard_check_pressed(vk_right)) {
       if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
             hsp = 0;
             sliding = 0;
@@ -668,7 +669,18 @@ if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
     sliding = 1;
     sprite_index = spr_player_slide;
     instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
-    if (powerup = 2) hsp += 0.20 * movespeed_burstpowerup * 3 else hsp = image_xscale * movespeed_burst;
+    if (powerup = 2) hsp = movespeed_burstpowerup * 3 else hsp = movespeed_burst;
+    alarm[6] = slideframes;
+}
+if (keyboard_check_pressed(vk_left)) {
+      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
+            hsp = 0;
+            sliding = 0;
+        }
+    sliding = 1;
+    sprite_index = spr_player_slide;
+    instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
+    if (powerup = 2) hsp = -movespeed_burstpowerup * 3 else hsp = -movespeed_burst;
     alarm[6] = slideframes;
 }
 }
