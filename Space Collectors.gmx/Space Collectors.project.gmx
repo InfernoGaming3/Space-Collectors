@@ -501,6 +501,7 @@
     <room>rooms\rm_titlescreen</room>
     <room>rooms\rm_galaxymap</room>
     <room>rooms\rm_cutscene</room>
+    <room>rooms\rm_movementtesting</room>
     <rooms name="World 1 (GreenHouse)">
       <room>rooms\rm_level1hub</room>
       <room>rooms\rm_level1</room>
@@ -536,7 +537,6 @@
     </rooms>
     <room>rooms\rm_testroom</room>
     <room>rooms\rm_diamondroom</room>
-    <room>rooms\rm_movementtesting</room>
     <room>rooms\rm_gameover</room>
     <room>rooms\rm_winscreen</room>
     <room>rooms\rm_world1map</room>
