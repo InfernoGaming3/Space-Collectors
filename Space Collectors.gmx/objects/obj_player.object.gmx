@@ -87,7 +87,7 @@ if (global.checkpointR == room)
 movespeed_normal = 1;
 movespeed_debuffed = 0.5;
 movespeed_buffed = 1.5;
-movespeed_burst = 1.5;
+movespeed_burst = 6;
 movespeed_buffedburst = 2;
 movespeed_powerup = 2.5;
 movespeed_burstpowerup = 3;
@@ -475,15 +475,15 @@ exit;
 
 
 //Get the player's input
-if (crouch = 0) {
 if (victorydance = 0) {
 if (act = 0) {
+    key_jump = keyboard_check_pressed(vk_space)
+if (crouch = 0) {
 
     key_right = keyboard_check(vk_right);
     key_left = keyboard_check(vk_left);
     key_up  = keyboard_check(vk_up);
     key_down = keyboard_check(vk_down);
-    key_jump = keyboard_check_pressed(vk_space)
     key_swim = keyboard_check(vk_space)
     key_jump_held = keyboard_check(vk_space)
     key_jump_released = keyboard_check_released(vk_space);
@@ -498,6 +498,7 @@ move = key_left + key_right;
 
 //Horizontal Movement
 if (swimming = 0) {
+if (sliding = 0) {
 if (act = 0) {
 if (crouch = 0) {
 if (key_left) { image_xscale = -1
@@ -506,6 +507,7 @@ if (key_left) { image_xscale = -1
 
 if (key_right) { image_xscale = 1
     if (hsp &lt; 3.5 * movespeed) { hsp += 0.20 * movespeed; }
+}
 }
 }
 }
@@ -657,18 +659,18 @@ if (crouch = 1 &amp;&amp; grounded = 0) {
 
 //Sliding
 if (swimming = 0) {
-if (crouch = 1 &amp;&amp; keyboard_check_pressed(vk_space) &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {   
-    
-    if (place_meeting(x+hsp,y,obj_wall))
-        {
+if (crouch = 1 &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {   
+if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
+      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
             hsp = 0;
             sliding = 0;
         }
     sliding = 1;
     sprite_index = spr_player_slide;
     instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
-    if (powerup = 2) hsp += 0.20 * movespeed_burstpowerup * 3 else hsp = image_xscale * movespeed_burst * 3;
+    if (powerup = 2) hsp += 0.20 * movespeed_burstpowerup * 3 else hsp = image_xscale * movespeed_burst;
     alarm[6] = slideframes;
+}
 }
 
 if (sliding = 1 &amp;&amp; grounded = 0) {
@@ -879,40 +881,7 @@ if (global.dead = 3) {
     
 }
 
-//Additional Alarms
-if (alarm12 &amp;&amp; !--alarm12) {
-    canattack = 0;
-    if (sprite_index = spr_player_attack) sprite_index = spr_player_idle;  
-}
 
-if (alarm13 &amp;&amp; !--alarm13) {
-    victorydance = 0;
-    movespeed = 1;
-    global.invincibility = 0;
-}
-
-if (alarm14 &amp;&amp; !--alarm14) {
-    sprite_index = spr_player_idle;
-}
-
-if (alarm15 &amp;&amp; !--alarm15) {
-    if (room = rm_introduction2) {
-    global.invincibility = 0;
-    obj_player.x = 4256
-    obj_player.y = 288
-}
-    if (room = rm_level3) {
-    global.invincibility = 0;
-    obj_player.x = 0
-    obj_player.y = 1024
-}
-
-if (room = rm_level4) {
-    global.invincibility = 0;
-    obj_player.x = 128
-    obj_player.y = 1248
-}
-}
 </string>
           </argument>
         </arguments>
@@ -1070,6 +1039,60 @@ y -= vsp;
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Additional Alarms
+if (alarm12 &amp;&amp; !--alarm12) {
+    canattack = 0;
+    if (sprite_index = spr_player_attack) sprite_index = spr_player_idle;  
+}
+
+if (alarm13 &amp;&amp; !--alarm13) {
+    victorydance = 0;
+    movespeed = 1;
+    global.invincibility = 0;
+}
+
+if (alarm14 &amp;&amp; !--alarm14) {
+    sprite_index = spr_player_idle;
+}
+
+if (alarm15 &amp;&amp; !--alarm15) {
+    if (room = rm_introduction2) {
+    global.invincibility = 0;
+    obj_player.x = 4256
+    obj_player.y = 288
+}
+    if (room = rm_level3) {
+    global.invincibility = 0;
+    obj_player.x = 0
+    obj_player.y = 1024
+}
+
+if (room = rm_level4) {
+    global.invincibility = 0;
+    obj_player.x = 128
+    obj_player.y = 1248
+}
+}
 </string>
           </argument>
         </arguments>
