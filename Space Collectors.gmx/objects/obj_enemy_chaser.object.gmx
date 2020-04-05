@@ -158,7 +158,7 @@ switch (state)
         if (enemystunned = 0) {
         if (instance_exists(obj_player)){
         dir = sign(obj_player.x - x);
-        hsp = dir * 3;
+        hsp = dir * 5;
         vsp = (min(7,vsp+0.05));
         if (distance_to_object(obj_player) &lt; 168) if (move=0){ state = e_state.idle }else{ state = e_state.roam}
         if (enemystunned = 1) state = e_state.idle;

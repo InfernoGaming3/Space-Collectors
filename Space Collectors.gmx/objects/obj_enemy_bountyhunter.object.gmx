@@ -74,7 +74,7 @@ switch (state)
         if (instance_exists(obj_player)){
         dir = sign(obj_player.x - x);
         vsp = (min(7,vsp+0.05));
-        hsp = dir * 4.7;
+        hsp = dir * 6.7;
         sprite_index = spr_enemy_bountyhunterc
         if (distance_to_object(obj_player) &lt; 330) state = e_state.idle;
          }

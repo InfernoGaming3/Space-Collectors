@@ -28,7 +28,7 @@
             <string>///Initialize Variables
 
 dir = -1;
-movespeed = 3;
+movespeed = 5;
 grav = 0.2;
 enemyhealth = 10
 enemydead = 0

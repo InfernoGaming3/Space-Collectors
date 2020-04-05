@@ -541,10 +541,10 @@ if (key_jump) &amp;&amp; (jumps &gt; 0) &amp;&amp; (jumpbuffer = 0) &amp;&amp; (
     jumpbuffer = 1;
     alarm[7] = 8;
     jumps -= 1;
-    sliding = 0;
     vsp = -jumpspeed;
     draw_yscale = 1.5;
     draw_xscale = 0.75;
+    sliding = 0;
      audio_play_sound(snd_jump, 2, false);
 }
 }
@@ -687,24 +687,6 @@ if (keyboard_check_pressed(vk_left)) {
 }
 }
 
-if (sliding = 1 &amp;&amp; grounded = 0) {
-
-    airdrop = false
-    crouch = 0;
-    sliding = 0;
-    slidoffground = 1;
-    alarm[8] = 10;
-
-}
-
-if sliding = 1 &amp;&amp; (place_meeting(x+hsp,y,obj_wall))
-        {   
-            sliding = 0;
-            hsp = 0; 
-        }
-}    
-
-
 //Sliding From Run
 if (swimming = 0) {
 if (key_right &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {
@@ -714,7 +696,7 @@ if (keyboard_check_pressed(vk_down)) {
             sliding = 0;
         }
     sliding = 1;
-    sprite_index = spr_player_slide;
+    sprite_index = spr_player_slide2;
     instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
     if (powerup = 2) hsp = movespeed_burstpowerup * 3 else hsp = movespeed_burst;
     alarm[6] = slideframes;
@@ -727,13 +709,33 @@ if (keyboard_check_pressed(vk_down)) {
             sliding = 0;
         }
     sliding = 1;
-    sprite_index = spr_player_slide;
+    sprite_index = spr_player_slide2;
     instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
     if (powerup = 2) hsp = -movespeed_burstpowerup * 3 else hsp = -movespeed_burst;
     alarm[6] = slideframes;
 }
 }
 }
+
+/*
+if (sliding = 1 &amp;&amp; grounded = 0) {
+
+    airdrop = false
+    crouch = 0;
+    sliding = 0;
+    slidoffground = 1;
+    alarm[8] = 5;
+
+}
+*/
+
+if sliding = 1 &amp;&amp; (place_meeting(x+hsp,y,obj_wall))
+        {   
+            sliding = 0;
+            hsp = 0; 
+        }
+}    
+
 
 
 //Air Drop 
@@ -907,6 +909,8 @@ if (global.flash &gt; 0) {
 if (global.dead = 1) {
     crouch = 0;
     sliding = 0;
+    airdrop = false;
+    global.playerattack = 0;
     sprite_index = spr_player_death;
     instance_change(obj_dyingplayer, true);
     
@@ -915,6 +919,9 @@ if (global.dead = 1) {
 if (global.dead = 2) {
     crouch = 0;
     sliding = 0;
+    airdrop = false;
+    canattack = 1;
+    global.playerattack = 0;
     sprite_index = spr_player_dissipate;
     instance_change(obj_dyingplayer, true);
     
@@ -923,6 +930,7 @@ if (global.dead = 2) {
 if (global.dead = 3) {
     crouch = 0;
     sliding = 0;
+    global.playerattack = 0;
     sprite_index = spr_player_squashed;
     instance_change(obj_dyingplayer, true);
     
@@ -953,6 +961,7 @@ if (global.dead = 3) {
 
 //Basic Movement Anims
 
+if (global.dead = 0) {
 if (swimming = 0) {
 if (torpedo = 0) {
 if (crouch = 0) {
@@ -971,6 +980,7 @@ else
     if (vsp &lt; 0) sprite_index = spr_player_jump; else sprite_index = spr_player_fall
 }
 
+}
 }
 }
 }

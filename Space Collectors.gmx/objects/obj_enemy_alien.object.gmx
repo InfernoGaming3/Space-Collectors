@@ -55,7 +55,7 @@ aliendead = 0;
     bullet = instance_create(x,y,obj_enemybullet);
     bullet.direction = 90 - 90 * image_xscale;
     bullet.image_angle = bullet.direction;
-    bullet.speed = 8;
+    bullet.speed = 10;
     alarm[1] = 50;
 }
 
