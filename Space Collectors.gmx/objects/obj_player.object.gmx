@@ -541,6 +541,7 @@ if (key_jump) &amp;&amp; (jumps &gt; 0) &amp;&amp; (jumpbuffer = 0) &amp;&amp; (
     jumpbuffer = 1;
     alarm[7] = 8;
     jumps -= 1;
+    sliding = 0;
     vsp = -jumpspeed;
     draw_yscale = 1.5;
     draw_xscale = 0.75;
