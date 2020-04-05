@@ -43,7 +43,7 @@ jumpbuffer = 0;
 powerup = 0;
 canshoot = 0;
 crouch = 0;
-slideframes = 14;
+slideframes = 8;
 sliding = 0;
 slidoffground = 0
 airdrop = false;
@@ -87,7 +87,7 @@ if (global.checkpointR == room)
 movespeed_normal = 1;
 movespeed_debuffed = 0.5;
 movespeed_buffed = 1.5;
-movespeed_burst = 5.5;
+movespeed_burst = 6;
 movespeed_buffedburst = 2;
 movespeed_powerup = 2.5;
 movespeed_burstpowerup = 3;
@@ -637,7 +637,6 @@ sprite_index = spr_player_crouch;
 }
 }
 }
-}
 
 if keyboard_check_released(vk_down) {
 if !place_meeting(x, y - 1, obj_halfwall) {
@@ -657,13 +656,13 @@ if (crouch = 1 &amp;&amp; grounded = 0) {
     crouch = 0;
 
 }
-
+}
 
 //Sliding
 if (swimming = 0) {
 if (crouch = 1 &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {   
 if (keyboard_check_pressed(vk_right)) {
-      if (place_meeting(x+hsp,y,obj_wall)) { //This is what happens when you collide with a wall
+      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
             hsp = 0;
             sliding = 0;
         }
@@ -674,7 +673,7 @@ if (keyboard_check_pressed(vk_right)) {
     alarm[6] = slideframes;
 }
 if (keyboard_check_pressed(vk_left)) {
-      if (place_meeting(x+hsp,y,obj_wall)) { //This is what happens when you collide with a wall
+      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
             hsp = 0;
             sliding = 0;
         }
@@ -702,39 +701,6 @@ if sliding = 1 &amp;&amp; (place_meeting(x+hsp,y,obj_wall))
             hsp = 0; 
         }
 }    
-
-
-//Sliding From Run
-if (swimming = 0) {
-if (keyboard_check_pressed(vk_right) &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {   
-if (keyboard_check_pressed(vk_down)) { 
-      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
-            hsp = 0;
-            sliding = 0;
-        }
-    sliding = 1;
-    sprite_index = spr_player_slide;
-    instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
-    if (powerup = 2) hsp = movespeed_burstpowerup * 3 else hsp = movespeed_burst;
-    alarm[6] = slideframes;
-}
-}
-if (keyboard_check_pressed(vk_left) &amp;&amp; sliding = 0 &amp;&amp; grounded = 1 &amp;&amp; global.playerattack = 0 &amp;&amp; movespeed != movespeed_debuffed) {
-if (keyboard_check_pressed(vk_down)) { 
-      if (place_meeting(x+hsp,y,obj_wall))        { //This is what happens when you collide with a wall
-            hsp = 0;
-            sliding = 0;
-        }
-    sliding = 1;
-    sprite_index = spr_player_slide;
-    instance_create(obj_player.x,obj_player.y,obj_dashsmoke);
-    if (powerup = 2) hsp = -movespeed_burstpowerup * 3 else hsp = -movespeed_burst;
-    alarm[6] = slideframes;
-}
-}
-}
-
-
 //Air Drop 
 
 if (powerup != 5) {
