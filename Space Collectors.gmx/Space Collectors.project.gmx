@@ -59,6 +59,7 @@
       <sprite>sprites\spr_player_slip</sprite>
       <sprite>sprites\spr_player_crouch</sprite>
       <sprite>sprites\spr_player_slide</sprite>
+      <sprite>sprites\spr_player_slide2</sprite>
       <sprite>sprites\spr_player_dance</sprite>
       <sprite>sprites\spr_player_death</sprite>
       <sprite>sprites\spr_player_deathfall</sprite>
@@ -151,6 +152,10 @@
       <sprite>sprites\spr_sunblock</sprite>
       <sprite>sprites\spr_moonblock</sprite>
       <sprite>sprites\spr_water</sprite>
+      <sprites name="lab blocks">
+        <sprite>sprites\spr_lab_block_1b</sprite>
+        <sprite>sprites\spr_lab_block_0_5b</sprite>
+      </sprites>
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_enemy_spike</sprite>
@@ -309,6 +314,7 @@
     <background>background\bg_woodinterior</background>
     <background>background\bg_boatexterior</background>
     <background>background\bg_greenhouseplanet</background>
+    <background>background\bg_lab</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -445,6 +451,11 @@
         <object>objects\obj_pinkteleporter</object>
         <object>objects\obj_orangeteleporter</object>
         <object>objects\obj_blackteleporter</object>
+        <object>objects\obj_basicwarp</object>
+        <object>objects\obj_ufowarp</object>
+      </objects>
+      <objects name="lab blocks">
+        <object>objects\obj_lab_block</object>
       </objects>
     </objects>
     <objects name="Projectiles">
@@ -492,6 +503,7 @@
         <object>objects\obj_ufomap</object>
         <object>objects\obj_levelenter</object>
       </objects>
+      <object>objects\object154</object>
     </objects>
     <objects name="NPC">
       <object>objects\obj_narrator</object>
@@ -501,7 +513,17 @@
     <room>rooms\rm_titlescreen</room>
     <room>rooms\rm_galaxymap</room>
     <room>rooms\rm_cutscene</room>
-    <room>rooms\rm_movementtesting</room>
+    <rooms name="Leftie's levels">
+      <room>rooms\rm_intro1</room>
+      <room>rooms\rm_intro2</room>
+      <room>rooms\rm_intro3</room>
+      <room>rooms\rm_intro4</room>
+      <room>rooms\rm_intro5</room>
+      <room>rooms\rm_intro6</room>
+      <room>rooms\rm_intro7</room>
+    </rooms>
+    <room>rooms\rm_gameover</room>
+    <room>rooms\rm_lab</room>
     <rooms name="World 1 (GreenHouse)">
       <room>rooms\rm_level1hub</room>
       <room>rooms\rm_level1</room>
@@ -537,10 +559,11 @@
     </rooms>
     <room>rooms\rm_testroom</room>
     <room>rooms\rm_diamondroom</room>
-    <room>rooms\rm_gameover</room>
     <room>rooms\rm_winscreen</room>
     <room>rooms\rm_world1map</room>
+    <room>rooms\rm_movementtesting</room>
     <room>rooms\rm_options</room>
+    <room>rooms\room38</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
