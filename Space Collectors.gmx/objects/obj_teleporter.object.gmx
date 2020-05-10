@@ -511,6 +511,23 @@ if room == rm_boss
         }
    }
    
+   if room == rm_movementtesting
+   {
+    if (global.shines &gt;= 0) 
+        {
+            sprite_index = spr_teleporter
+            if (place_meeting(x,y,obj_player))
+            {
+                scr_savegame();
+                global.shines = 0;
+                global.roomstars = 0;
+                global.checkpointR = 0;
+                room_goto (rm_level1hub);
+            }
+        }
+   }
+   
+   
       if room == rm_w2_lvl1
    {
     if (global.shines &gt;= 6) 

@@ -115,7 +115,7 @@ if (place_meeting(x,y,obj_enemy_rotatespikebosshit))
 
 
 //Colliding With Player
-if (place_meeting(x,y,obj_player))
+if (place_meeting(x,y,obj_player)) || (place_meeting(x,y,obj_buddy_colonel))
     {
     if (global.invincibility = 0) 
         {
@@ -133,7 +133,7 @@ if (place_meeting(x,y,obj_player))
         }      
     }
 
-if (place_meeting(x,y,obj_player))
+if (place_meeting(x,y,obj_player)) || (place_meeting(x,y,obj_buddy_colonel))
     {
      if (global.invincibility = 0) 
         {

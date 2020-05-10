@@ -35,6 +35,31 @@ if (global.friends &gt;= 1) {
     obj_truefriendfollower.y = obj_player.y - 8
 
 }
+
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sprite_index = spr_truefriend;
 </string>
           </argument>
         </arguments>
@@ -110,11 +135,14 @@ if point_distance(x, y, obj_player.x, obj_player.y) &gt; 30
    {
    
    move_towards_point(obj_player.x, obj_player.y-8, 5);
+   //If Player is too far, then teleport to him
    if point_distance(x, y, obj_player.x, obj_player.y) &gt; 200 
     {
         obj_truefriendfollower.x = obj_player.x - 30
         obj_truefriendfollower.y = obj_player.y - 8
         instance_create(obj_truefriendfollower.x,obj_truefriendfollower.y,obj_dashsmoke);
+        sprite_index = spr_truefriendhelp
+        alarm[0] = 100;
     }
    }
 else speed = 0;

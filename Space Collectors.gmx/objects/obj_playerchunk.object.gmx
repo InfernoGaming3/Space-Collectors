@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>direction = random(360)
-speed = random_range(750,1500) / room_speed
+speed = random_range(1050,1800) / room_speed
 global.Bitsreassembled = 0;
 inposition = false;
-alarm[0] = 250;
+alarm[0] = 150;
 </string>
           </argument>
         </arguments>

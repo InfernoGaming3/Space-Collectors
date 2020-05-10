@@ -734,12 +734,7 @@ if (alarm14 &amp;&amp; !--alarm14) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room == rm_movementtesting {
-
-    room_restart()
-
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

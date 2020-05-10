@@ -125,57 +125,38 @@ if global.daytype = "night" {
 
 if room = rm_titlescreen
    {
-   audio_stop_sound(snd_gameover);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_world2theme);
-   audio_stop_sound(snd_endingtheme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_book);
-   audio_stop_sound(snd_book2);
-   audio_stop_sound(snd_map1theme);
-   audio_stop_sound(snd_solarpowertheme);
+    audio_stop_all();
    audio_play_sound(snd_titlescreen, 1, true);
    }
    
    if room = rm_galaxymap
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_gameover);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_world2theme);
-   audio_stop_sound(snd_endingtheme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_book);
-   audio_stop_sound(snd_book2);
-   audio_stop_sound(snd_solarpowertheme);
       if !audio_is_playing(snd_map1theme) {
+        audio_stop_all();
         audio_play_sound(snd_map1theme, 1, true);
     }
    }
    
+      if global.world = "World0"
+   {
+    if !audio_is_playing(snd_maintheme) {
+        audio_stop_all();
+        audio_play_sound(snd_maintheme, 1, true);
+        }
+    }
+   
+   
    if global.world = "World1"
    {
    if global.daytype = "day" {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_map1theme);
-   audio_stop_sound(snd_world2theme);
-   audio_stop_sound(snd_world1themenight);
    if !audio_is_playing(snd_world1theme) {
+        audio_stop_all();
         audio_play_sound(snd_world1theme, 1, true);
     }
    }
       if global.daytype = "night" {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_map1theme);
-   audio_stop_sound(snd_world2theme);
-   audio_stop_sound(snd_world1theme);
    if !audio_is_playing(snd_world1themenight) {
+        audio_stop_all();
         audio_play_sound(snd_world1themenight, 1, true);
     }
    }
@@ -183,73 +164,63 @@ if room = rm_titlescreen
    
     if global.world = "World2"
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_map1theme);
-   if !audio_is_playing(snd_world2themei) if !audio_is_playing(snd_world2theme)  audio_play_sound(snd_world2themei, 1, false);
-           
+   if !audio_is_playing(snd_world2themei) &amp;&amp; !audio_is_playing(snd_world2theme)  {
+       audio_stop_all();
+       audio_play_sound(snd_world2themei, 1, false);
+        }
    }
-    
     
    if room = rm_miniboss
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-    audio_stop_sound(snd_s1theme);
-    audio_stop_sound(snd_s2theme);
    if !audio_is_playing(snd_boss1theme) {
+        audio_stop_all();
         audio_play_sound(snd_boss1theme, 1, true);
     }
    }
    
       if room = rm_boss
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-    audio_stop_sound(snd_s1theme);
-    audio_stop_sound(snd_s2theme);
    if !audio_is_playing(snd_boss1theme) &amp;&amp; !audio_is_playing(snd_boss1themeintro) {
+        audio_stop_all();
         audio_play_sound(snd_boss1themeintro, 1, false);
+    }
+   }
+   
+         if room = rm_w3_lvl1
+   {
+   if !audio_is_playing(snd_outsideboat) {
+        audio_stop_all();
+        audio_play_sound(snd_outsideboat, 1, true);
+    }
+   }
+    
+      if room = rm_seatest
+   {
+   if !audio_is_playing(snd_oceancity) {
+        audio_stop_all();
+        audio_play_sound(snd_oceancity, 1, true);
     }
    }
    
       if room = rm_introduction3s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_solarpowertheme);
-   audio_stop_sound(snd_s2theme);
    if !audio_is_playing(snd_s1theme) {
+        audio_stop_all();
         audio_play_sound(snd_s1theme, 1, true);
     }
    }
-   
          if room = rm_introduction4s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_solarpowertheme);
-   audio_stop_sound(snd_s2theme);
    if !audio_is_playing(snd_s1theme) {
+        audio_stop_all();
         audio_play_sound(snd_s1theme, 1, true);
     }
    }
    
-   
-            if room = rm_introduction5s
+   if room = rm_introduction5s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_solarpowertheme);
-   audio_stop_sound(snd_s1theme);
    if !audio_is_playing(snd_s2theme) {
+        audio_stop_all();
         audio_play_sound(snd_s2theme, 1, true);
     }
    }
@@ -259,75 +230,43 @@ if room = rm_titlescreen
    audio_stop_sound(snd_s1theme);
    }
    
-            if room = rm_level1hubs
+   if room = rm_level1hubs
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_book);
-    audio_stop_sound(snd_book2);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_s2theme) {
+        audio_stop_all();
         audio_play_sound(snd_s2theme, 1, true);
     }
    }
    
-               if room = rm_level2s
+   if room = rm_level2s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_book) {
+        audio_stop_all();
         audio_play_sound(snd_book, 1, false);
     }
    }
    
-                  if room = rm_level3s
+   if room = rm_level3s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_book) {
+        audio_stop_all();
         audio_play_sound(snd_book, 1, false);
     }
    }
    
    
-                     if room = rm_level4s
+   if room = rm_level4s
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_book) {
+        audio_stop_all();
         audio_play_sound(snd_book, 1, false);
     }
    }
    
    if room = rm_bosss
    {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_s1theme);
-   audio_stop_sound(snd_s2theme);
-   audio_stop_sound(snd_book);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_book2) {
+        audio_stop_all();
         audio_play_sound(snd_book2, 1, false);
     }
    }
@@ -335,13 +274,8 @@ if room = rm_titlescreen
    
 if room = rm_testroom
    {
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_boss1theme);
-    audio_stop_sound(snd_book2);
-   audio_stop_sound(snd_solarpowertheme);
    if !audio_is_playing(snd_endingtheme) {
+        audio_stop_all();
         audio_play_sound(snd_endingtheme, 1, true);
     }
    
@@ -349,42 +283,13 @@ if room = rm_testroom
    
 if room = rm_gameover
    {
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_world1theme);
-   audio_stop_sound(snd_world2theme);
-    audio_stop_sound(snd_boss1theme);
-   audio_stop_sound(snd_endingtheme);
-    audio_stop_sound(snd_s1theme);
-    audio_stop_sound(snd_s2theme);
-   audio_play_sound(snd_gameover, 1, true);
+   if !audio_is_playing(snd_gameover) {
+        audio_stop_all();
+        audio_play_sound(snd_gameover, 1, true);
+    }
    }
    
-      if room = rm_w3_lvl1
-   {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_map1theme);
-   audio_stop_sound(snd_world1theme);
-    audio_stop_sound(snd_s1theme);
-    audio_stop_sound(snd_s2theme);
-   if !audio_is_playing(snd_outsideboat) {
-        audio_play_sound(snd_outsideboat, 1, true);
-    }
-   }
-    
-      if room = rm_seatest
-   {
-   audio_stop_sound(snd_titlescreen);
-   audio_stop_sound(snd_maintheme);
-   audio_stop_sound(snd_map1theme);
-   audio_stop_sound(snd_world1theme);
-    audio_stop_sound(snd_s1theme);
-    audio_stop_sound(snd_s2theme);
-   if !audio_is_playing(snd_oceancity) {
-        audio_play_sound(snd_oceancity, 1, true);
-    }
-   }
-    
+
 
 </string>
           </argument>

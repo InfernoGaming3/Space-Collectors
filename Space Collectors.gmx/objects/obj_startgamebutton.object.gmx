@@ -76,8 +76,10 @@
             <string>global.stars = 0;
 global.totalshines = 0;
 global.gamestart = 0;
-room_goto(rm_galaxymap);
+global.world = "World0"
+global.checkpointR = 0;
 scr_savegame();
+room_goto(rm_intro1);
 
 </string>
           </argument>

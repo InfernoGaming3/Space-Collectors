@@ -54,7 +54,7 @@ turretdead = 0;
 bullet2 = instance_create(x,y,obj_turretbullet);
 bullet2.direction = obj_enemy_twinturret.image_angle;
 bullet2.image_angle = bullet2.direction;
-bullet2.speed = 10;
+bullet2.speed = 12;
 alarm[1] = 40;
 </string>
           </argument>
@@ -84,7 +84,7 @@ alarm[1] = 40;
     bullet.direction = obj_enemy_twinturret.image_angle;
     bullet.image_angle = bullet.direction;
     bullet.speed = 8;
-    alarm[2] = 10;
+    alarm[2] = 12;
     
     
 }

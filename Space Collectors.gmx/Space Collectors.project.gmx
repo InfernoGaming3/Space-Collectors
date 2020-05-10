@@ -46,6 +46,7 @@
       <sound>sound\snd_coin</sound>
       <sound>sound\snd_buzz</sound>
       <sound>sound\snd_torpedo</sound>
+      <sound>sound\snd_omnimous</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -90,6 +91,10 @@
         <sprite>sprites\spr_buddy_mscrushergroundpound</sprite>
         <sprite>sprites\spr_buddy_mscrusherstar</sprite>
         <sprite>sprites\spr_buddy_goldenheart</sprite>
+        <sprite>sprites\spr_buddy_colonel</sprite>
+        <sprite>sprites\spr_buddy_colonelwalk</sprite>
+        <sprite>sprites\spr_buddy_colonelcrouch</sprite>
+        <sprite>sprites\spr_buddy_colonelroll</sprite>
       </sprites>
     </sprites>
     <sprites name="objects">
@@ -302,6 +307,7 @@
     <sprites name="Npcs">
       <sprite>sprites\spr_narrator</sprite>
       <sprite>sprites\spr_narratorspeak</sprite>
+      <sprite>sprites\spr_colonel0</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -315,6 +321,7 @@
     <background>background\bg_boatexterior</background>
     <background>background\bg_greenhouseplanet</background>
     <background>background\bg_lab</background>
+    <background>background\ts_main</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -339,6 +346,7 @@
       <object>objects\obj_spawnpoint</object>
       <objects name="Buddies">
         <object>objects\obj_buddy_mscrusher</object>
+        <object>objects\obj_buddy_colonel</object>
       </objects>
     </objects>
     <objects name="Collectables">
@@ -440,6 +448,7 @@
       <object>objects\obj_sunblock</object>
       <object>objects\obj_water</object>
       <objects name="Warps">
+        <object>objects\obj_basicwarp</object>
         <object>objects\obj_warpholetele</object>
         <object>objects\obj_warpholereciever</object>
         <object>objects\obj_teleporter</object>
@@ -451,7 +460,6 @@
         <object>objects\obj_pinkteleporter</object>
         <object>objects\obj_orangeteleporter</object>
         <object>objects\obj_blackteleporter</object>
-        <object>objects\obj_basicwarp</object>
         <object>objects\obj_ufowarp</object>
       </objects>
       <objects name="lab blocks">
@@ -463,35 +471,20 @@
       <object>objects\obj_enemybullet</object>
       <object>objects\obj_turretbullet</object>
       <object>objects\obj_enemy_patrodingspikeprojectile</object>
-      <object>objects\obj_enemy_spinytrapprojectile</object>
       <object>objects\obj_enemy_patrodinguspikeprojectile</object>
+      <object>objects\obj_enemy_spinytrapprojectile</object>
       <object>objects\obj_enemy_shroominspore</object>
     </objects>
     <objects name="Miscellaneous">
-      <object>objects\obj_score</object>
-      <object>objects\obj_pause</object>
-      <object>objects\obj_bgm</object>
-      <object>objects\obj_friendtracker</object>
-      <object>objects\obj_gamemanager</object>
-      <object>objects\obj_lighting</object>
-      <object>objects\obj_text</object>
-      <object>objects\obj_piece</object>
-      <object>objects\obj_retry</object>
-      <object>objects\obj_startgamebutton</object>
-      <object>objects\obj_loadgamebutton</object>
-      <object>objects\obj_optionsbutton</object>
-      <object>objects\obj_exitgamebutton</object>
-      <object>objects\obj_controlsbutton</object>
-      <object>objects\obj_wintext</object>
-      <object>objects\obj_electriceffectdisappear</object>
-      <object>objects\obj_electriceffect</object>
-      <object>objects\obj_dashsmoke</object>
-      <object>objects\obj_landsmoke</object>
-      <object>objects\obj_death</object>
-      <object>objects\obj_sign1</object>
-      <object>objects\obj_sign2</object>
-      <object>objects\obj_sign3</object>
-      <object>objects\obj_sign4</object>
+      <objects name="GUI">
+        <object>objects\obj_retry</object>
+        <object>objects\obj_startgamebutton</object>
+        <object>objects\obj_optionsbutton</object>
+        <object>objects\obj_loadgamebutton</object>
+        <object>objects\obj_exitgamebutton</object>
+        <object>objects\obj_wintext</object>
+        <object>objects\obj_controlsbutton</object>
+      </objects>
       <objects name="World Map">
         <object>objects\obj_sun</object>
         <object>objects\obj_greenplanet</object>
@@ -503,17 +496,39 @@
         <object>objects\obj_ufomap</object>
         <object>objects\obj_levelenter</object>
       </objects>
+      <objects name="GFX">
+        <object>objects\obj_electriceffectdisappear</object>
+        <object>objects\obj_electriceffect</object>
+        <object>objects\obj_landsmoke</object>
+        <object>objects\obj_dashsmoke</object>
+      </objects>
+      <objects name="NPC">
+        <object>objects\obj_narrator</object>
+        <object>objects\obj_colonel0</object>
+      </objects>
+      <object>objects\obj_debugmode</object>
+      <object>objects\obj_score</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_bgm</object>
+      <object>objects\obj_friendtracker</object>
+      <object>objects\obj_gamemanager</object>
+      <object>objects\obj_lighting</object>
+      <object>objects\obj_text</object>
+      <object>objects\obj_piece</object>
+      <object>objects\obj_death</object>
+      <object>objects\obj_sign1</object>
+      <object>objects\obj_sign2</object>
+      <object>objects\obj_sign3</object>
+      <object>objects\obj_sign4</object>
       <object>objects\object154</object>
-    </objects>
-    <objects name="NPC">
-      <object>objects\obj_narrator</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_titlescreen</room>
-    <room>rooms\rm_galaxymap</room>
-    <room>rooms\rm_cutscene</room>
-    <rooms name="Leftie's levels">
+    <rooms name="Title">
+      <room>rooms\rm_titlescreen</room>
+      <room>rooms\rm_options</room>
+    </rooms>
+    <rooms name="World 0 [Home]">
       <room>rooms\rm_intro1</room>
       <room>rooms\rm_intro2</room>
       <room>rooms\rm_intro3</room>
@@ -522,8 +537,11 @@
       <room>rooms\rm_intro6</room>
       <room>rooms\rm_intro7</room>
     </rooms>
-    <room>rooms\rm_gameover</room>
-    <room>rooms\rm_lab</room>
+    <rooms name="World Map">
+      <room>rooms\rm_galaxymap</room>
+      <room>rooms\rm_cutscene</room>
+      <room>rooms\rm_movementtesting</room>
+    </rooms>
     <rooms name="World 1 (GreenHouse)">
       <room>rooms\rm_level1hub</room>
       <room>rooms\rm_level1</room>
@@ -553,17 +571,18 @@
       <room>rooms\rm_w2_lvl3</room>
       <room>rooms\rm_w2_entrance</room>
     </rooms>
-    <rooms name="World 3 (SpaceShip)">
+    <rooms name="World 3 (SteamBoat]">
       <room>rooms\rm_w3_lvl1</room>
       <room>rooms\rm_seatest</room>
     </rooms>
-    <room>rooms\rm_testroom</room>
-    <room>rooms\rm_diamondroom</room>
-    <room>rooms\rm_winscreen</room>
-    <room>rooms\rm_world1map</room>
-    <room>rooms\rm_movementtesting</room>
-    <room>rooms\rm_options</room>
-    <room>rooms\room38</room>
+    <rooms name="TestRooms">
+      <room>rooms\rm_gameover</room>
+      <room>rooms\rm_lab</room>
+      <room>rooms\rm_world1map</room>
+      <room>rooms\rm_diamondroom</room>
+      <room>rooms\rm_testroom</room>
+      <room>rooms\rm_winscreen</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
