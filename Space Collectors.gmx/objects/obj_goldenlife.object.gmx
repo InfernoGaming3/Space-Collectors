@@ -82,7 +82,16 @@ if (global.planet = 1) {
             <kind>1</kind>
             <string>with (obj_player) {
 
-if room = rm_introduction2 {
+if room = rm_w2_lvl2 {
+    if (global.planet = 1) {
+    global.life += 1;
+    global.points += 30;
+    audio_play_sound(snd_collectlife, 3, false);
+    global.invincibility = 1;
+    alarm15 = 20
+    }
+}
+if room = rm_w1_lvl7 {
     if (global.planet = 1) {
     global.life += 1;
     global.points += 30;
@@ -92,7 +101,7 @@ if room = rm_introduction2 {
     }
 }
 
-if room = rm_level3 {
+if room = rm_w1_lvl8 {
     if (global.planet = 1) {
     global.life += 1;
     global.points += 30;
@@ -102,12 +111,12 @@ if room = rm_level3 {
     }
 }
 
-if room = rm_level4 {
+if room = rm_w1_lvl9 {
     if (global.planet = 1) {
     global.life += 1;
     global.points += 30;
     audio_play_sound(snd_collectlife, 3, false);
-    global.lifescollected = 1;
+    global.invincibility = 1;
     alarm15 = 20
     }
 }

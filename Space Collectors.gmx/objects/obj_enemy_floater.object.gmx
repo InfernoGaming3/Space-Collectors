@@ -50,7 +50,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>7</string>
+            <string>6</string>
           </argument>
         </arguments>
       </action>
@@ -75,6 +75,23 @@
             <string>if (global.pause) exit;
 
 
+//Visible at Day
+//DayNight System
+if global.world = "World1" {
+    if global.daytype = "day" {
+    
+        visible = true;
+    }
+    if global.daytype = "night" {
+    
+        visible = false;
+    
+    }
+}
+
+
+//Colliding with Player
+if global.daytype = "day" || global.world != "World1" {
 if (place_meeting(x,y,obj_player))
     {
     if (global.invincibility = 0) 
@@ -107,7 +124,7 @@ if (place_meeting(x,y,obj_player))
                 }
         }
     }
-
+}
 
 </string>
           </argument>

@@ -47,7 +47,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto (rm_level4);
+            <string>room_goto (rm_w1_lvl9);
 </string>
           </argument>
         </arguments>
@@ -73,67 +73,8 @@
             <string>if global.levelscompleted &gt;= 5 sprite_index = spr_redteleporter_closed
 if global.levelscompleted &lt;= 3 sprite_index = spr_redteleporter_closed
 
-if room == rm_level1hub
-   {
-     if (global.levelscompleted = 4) {
-        if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
 
-      }
-   }
-   
-if room == rm_level1hubs
-   {
-     if (global.levelscompleted = 4) {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                global.shines = 0;
-                global.checkpointR = 0;
-                room_goto (rm_level4s);
-                
-            }
-      }
-   }
-   
-   if room == rm_level4
-   {
-    if (global.shines &gt;= 12) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.checkpointR = 0;
-                room_goto (rm_level1hub);
-            }
-
-        }
-   }
- 
-
-
-if room == rm_introduction2 {
+if room == rm_w2_lvl2 {
 if (place_meeting(x,y,obj_player))
 {
 obj_player.x = 6865;
@@ -141,7 +82,15 @@ obj_player.y = 96;
 }
 }
 
-if room == rm_level3 {
+if room == rm_w1_lvl7 {
+if (place_meeting(x,y,obj_player))
+{
+obj_player.x = 2016;
+obj_player.y = 608;
+}
+}
+
+if room == rm_w1_lvl8 {
 if (place_meeting(x,y,obj_player))
 {
 obj_player.x = 128;
@@ -149,7 +98,7 @@ obj_player.y = 2112;
 }
 }
 
-if room == rm_level4 {
+if room == rm_w1_lvl9 {
 if (place_meeting(x,y,obj_player))
 {
 obj_player.x = 1696;

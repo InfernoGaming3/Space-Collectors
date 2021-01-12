@@ -52,7 +52,7 @@
             <kind>1</kind>
             <string>instance_destroy();
 
-with (obj_score) {
+with (obj_gamemanager) {
 
 alarm[0] = 200;
 

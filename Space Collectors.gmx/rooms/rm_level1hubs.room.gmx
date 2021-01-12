@@ -1085,14 +1085,9 @@
     <instance objName="obj_wall" x="2336" y="0" name="inst_63220F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="2336" y="32" name="inst_4E8782E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="2336" y="64" name="inst_7B8C55E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_warpholereciever" x="992" y="1792" name="inst_9BD65444" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shine" x="768" y="2112" name="inst_99EDC40C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shine" x="1376" y="2112" name="inst_4988AEA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="2112" y="1504" name="inst_E8A969F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_darkblueteleporter" x="32" y="1056" name="inst_38E61695" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_redteleporter" x="1760" y="2464" name="inst_7FFC373B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_redteleporter" x="1792" y="2464" name="inst_58C3AABF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_redteleporter" x="1728" y="2464" name="inst_A0C92B99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="1696" y="2400" name="inst_0F981B53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="1696" y="2432" name="inst_FA9DA5B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wallground" x="1696" y="2464" name="inst_EDB6B3A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1110,7 +1105,6 @@
     <instance objName="obj_star" x="2272" y="64" name="inst_7E025B43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_star" x="2240" y="64" name="inst_1F1A92B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_star" x="2304" y="64" name="inst_6B4F9BC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_yellowteleporter" x="2272" y="768" name="inst_B3963068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1984" y="896" name="inst_A044E2BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2016" y="896" name="inst_B1E5F51F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2048" y="896" name="inst_1C01136C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

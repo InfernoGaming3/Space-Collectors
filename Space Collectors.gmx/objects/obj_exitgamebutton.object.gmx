@@ -71,8 +71,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_savegame();
+            <string>if (global.gamestart = 0) {
 game_end();
+}else{
+scr_savegame();
+game_end();
+}
+
+
 </string>
           </argument>
         </arguments>

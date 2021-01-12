@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>direction = random(360)
+OriginalX = 0;
+OriginalY = 0;
 speed = random_range(1050,1800) / room_speed
 global.Bitsreassembled = 0;
 inposition = false;
@@ -91,9 +93,10 @@ if global.Reassembling = false {
         if image_alpha &gt; 0 image_alpha -= 0.05;
     }
 } else {
-    
+    if (instance_exists(obj_spawnpoint)) {
     OriginalX = obj_spawnpoint.x;
     OriginalY = obj_spawnpoint.y;
+    }
 
     if point_distance(x, y, OriginalX, OriginalY) &gt; 5
    {

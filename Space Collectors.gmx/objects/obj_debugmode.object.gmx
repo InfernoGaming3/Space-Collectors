@@ -55,53 +55,6 @@ debugtoggle = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="105">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if room_exists(room_next(room)) room_goto_next();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="103">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if room_exists(room_previous(room)) room_goto_previous();
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="9" enumb="82">
       <action>
         <libid>1</libid>
@@ -119,8 +72,36 @@ debugtoggle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart();
-
+            <string>x = xstart;
+y = ystart;
+room_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.debug = true) {
+global.Reassembling = true;
+global.Bits = 9;
+if room_exists(room_previous(room)) room_goto_previous();
+}
 </string>
           </argument>
         </arguments>
@@ -144,6 +125,33 @@ debugtoggle = 0;
           <argument>
             <kind>1</kind>
             <string>room_goto(rm_movementtesting);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.debug = true) {
+global.Reassembling = true;
+global.Bits = 9;
+if room_exists(room_next(room)) room_goto_next();
+}
 </string>
           </argument>
         </arguments>
@@ -177,6 +185,31 @@ audio_play_sound(snd_omnimous, 1, false);
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="51">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.debug = true) {
+room_goto(rm_galaxymap);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="50">
       <action>
         <libid>1</libid>
@@ -194,9 +227,11 @@ audio_play_sound(snd_omnimous, 1, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_buddy_colonel)){
+            <string>if (global.debug = true) {
+if (instance_exists(obj_buddy_colonel)){
 with (obj_buddy_colonel) {
 instance_change(obj_player, false);
+}
 }
 }
 </string>
@@ -221,10 +256,12 @@ instance_change(obj_player, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_player)){
+            <string>if (global.debug = true) {
+if (instance_exists(obj_player)){
 with (obj_player) {
 vsp = -jumpspeed;
 instance_change(obj_buddy_colonel, false);
+}
 }
 }
 </string>

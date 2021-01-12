@@ -109,16 +109,17 @@ instance_destroy(obj_electriceffect);
             <string>if (global.pause) exit;
 
 //Visible at Night
-if (global.daytype = "day") { 
-
-visible = false;
-
-}
-
-if (global.daytype = "night") { 
-
-visible = true;
-
+//DayNight System
+if global.world = "World1" {
+    if global.daytype = "night" {
+    
+        visible = true;
+    }
+    if global.daytype = "day" {
+    
+        visible = false;
+    
+    }
 }
 
 //Killed by the Player
@@ -172,6 +173,7 @@ y += vsp;
           <argument>
             <kind>1</kind>
             <string>//Shoot Projectile
+if (visible = true) {
 if (enemystunned = 0) {
 vulnerable = 1;
 sprite_index = spr_enemy_shroominup
@@ -187,6 +189,7 @@ spore3 = instance_create(x,y,obj_enemy_shroominspore);
 spore3.direction = 135
 spore3.speed = 4;
 alarm[1] = 40;
+}
 }
 </string>
           </argument>

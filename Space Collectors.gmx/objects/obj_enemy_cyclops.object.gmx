@@ -58,13 +58,14 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (enemydead = 0) {
+            <string>//Movement
+if (enemydead = 0) {
 if irandom(60) = 1 motion_set(0, 1 + random(2));
 if irandom(60) = 1 motion_set(180, 1 + random(2));
 move_bounce_solid(true);
 } 
 
-
+//Killed
 if (enemydead = 1) {
 sprite_index = spr_enemy_cyclops_paralyzed
 motion_set(90, 8);

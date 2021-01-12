@@ -131,6 +131,23 @@ instance_destroy(obj_electriceffect);
             <kind>1</kind>
             <string>if (global.pause) exit;
 
+//Visible at Night
+//DayNight System
+if global.world = "World1" {
+    if global.daytype = "night" {
+    
+        visible = true;
+    }
+    if global.daytype = "day" {
+    
+        visible = false;
+    
+    }
+}
+
+if enemystunned = 1 state = e_state.idle;
+
+
 switch (state)
 {
     case e_state.idle:
@@ -144,11 +161,15 @@ switch (state)
     break;
     case e_state.roam:
     {
+        if (enemystunned = 0) {
         hsp = dir * move / 2;
         vsp = (min(7,vsp+0.05));
         if (instance_exists(obj_player)){
         if (distance_to_object(obj_player) &lt; 136) state = e_state.chase;
+         }else{
+            hsp = 0;
          }
+        }
         
     } 
     break;
@@ -158,7 +179,7 @@ switch (state)
         if (enemystunned = 0) {
         if (instance_exists(obj_player)){
         dir = sign(obj_player.x - x);
-        hsp = dir * 5;
+        hsp = dir * 4;
         vsp = (min(7,vsp+0.05));
         if (distance_to_object(obj_player) &lt; 168) if (move=0){ state = e_state.idle }else{ state = e_state.roam}
         if (enemystunned = 1) state = e_state.idle;
@@ -193,6 +214,7 @@ if (place_meeting(x,y+vsp,obj_wall))
 y += vsp;
 
 //Colliding With Player
+if global.daytype = "night" || global.world != "World1" {
 if (place_meeting(x,y,obj_player))
     {
     if (global.invincibility = 0) 
@@ -203,7 +225,7 @@ if (place_meeting(x,y,obj_player))
                     {
                         if (enemystunned = 0) 
                         {
-                        global.dead = 1;
+                        if (global.playerattack = 0) global.dead = 1;
                         }
                     }
                 
@@ -222,15 +244,19 @@ if (place_meeting(x,y,obj_player))
                         {
                             if (enemystunned = 0) 
                             {
-                            global.friends -= 1; 
-                            audio_play_sound(snd_hurtfriend, 2, false); 
-                            global.flash = 60;
+                                if (global.playerattack = 0)
+                                { 
+                                    global.friends -= 1; 
+                                    audio_play_sound(snd_hurtfriend, 2, false); 
+                                    global.flash = 60;
+                                }
                             }
                         }
                                
                 }
         }
     }
+}
 
 //Facing the Player
 if state = e_state.chase {
@@ -242,7 +268,7 @@ if( x_to_player != 0 )
 }
 
 if state = e_state.roam {
-image_xscale = dir
+image_xscale = dir;
 }
 
 //Stunned by the Player
@@ -251,9 +277,9 @@ if (place_meeting(x,y,obj_attackeffect))
     {
         if (global.playerattack = 1) {
         if (enemystunned = 0) {
-        enemystunned = 1
+        enemystunned = 1;
         instance_create(x-16, y-14, obj_electriceffect);
-        alarm[0] = 30   
+        alarm[0] = 40;   
     }
   }  
 }

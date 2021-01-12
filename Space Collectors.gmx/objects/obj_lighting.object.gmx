@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.light = surface_create(view_wview, view_hview);
+            <string>///Initialize Lighting Variable and Create Surface
+global.light = surface_create(view_wview, view_hview);
 global.lighting = true;
 </string>
           </argument>
@@ -49,7 +50,8 @@ global.lighting = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.light = surface_create(view_wview, view_hview);
+            <string>///Create Surface again
+global.light = surface_create(view_wview, view_hview);
 global.lighting = true;
 </string>
           </argument>
@@ -73,7 +75,8 @@ global.lighting = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_set_target(global.light);
+            <string>///Draw Light
+surface_set_target(global.light);
 draw_set_color(c_ltgray);
 draw_rectangle(0,0,view_wview,view_hview,false)
 surface_reset_target();
@@ -99,7 +102,8 @@ surface_reset_target();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_subtract);
+            <string>///Draw Light again
+draw_set_blend_mode(bm_subtract);
 draw_surface(global.light,view_xview,view_yview);
 draw_set_blend_mode(bm_normal);
 </string>

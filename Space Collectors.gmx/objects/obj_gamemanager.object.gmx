@@ -25,33 +25,102 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.module = 0;
-global.lighting = 0;
-r = 0;
+            <string>///Initialize Game Variables
+global.gamestart = 0;
+global.world = "NoWorld";
+global.daytype = "day";
+global.points = 0;
+global.friends = 0;
+global.life = 3;
+global.stars = 0;
+global.roomstars = 0;
+global.shines = 0;
+global.totalshines = 0;
+global.shinerequirement = 0;
+global.coins = 0;
+global.lifescollected = 0;
+global.diamonds = 0;
+global.planet = 0;
+global.bossdead = 0;
+global.friends = 0;
+global.maxshines = instance_count;
+global.levelscompleted = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bonus Level
+   if(global.diamonds = 0) {
+                room_goto (rm_winscreen);
+        }
+     
+     
+     
+    if(global.diamonds &gt;= 1) {
+        {
+                room_goto (rm_testroom);
 
+        }
+     }
+     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//alarm[0] = 10;
-
-//offset_x=view_wview[0]/2
-//offset_y=view_hview[0]/2
-
-//Store data in the map
-//ds_map_add(shineinfo, "shineinfo", false);
-
-//Get value out of the map
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Victory Dance + Swoop UFO Alarms
+with(obj_player)
+{
+alarm13 = 450;
+victorydance = 1;
+}
+with(obj_swoop_ufo)
+{
+alarm[2] = 300;
+}
+with(obj_boss_solarpower) {
+audio_play_sound(snd_shock, 3, false);
+instance_create(x, y, obj_electriceffectdisappear);
+instance_create(x+32, y, obj_electriceffectdisappear);
+instance_create(x-32, y, obj_electriceffectdisappear);
+instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -74,29 +143,9 @@ r = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Activation  
-//instance_activate_all();
-//instance_deactivate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, false, true);
-//instance_activate_object(obj_wall);
-//instance_activate_object(obj_wallground);
-//instance_activate_object(obj_desertwall);
-//instance_activate_object(obj_desertwallground);
-//instance_activate_object(obj_woodwall);
-//instance_activate_object(obj_woodwallground);
-//instance_activate_object(obj_wall);
-//instance_activate_object(obj_halfwall);
-//instance_activate_object(obj_platform);
-//instance_activate_object(obj_movingplatformh);
-//instance_activate_object(obj_movingplatformv);
-//instance_activate_object(obj_score);
-//instance_activate_object(obj_pause);
-///instance_activate_object(obj_friendtracker);
-
-
-
-
-
-
+            <string>///Diamond Room
+obj_player.x = 2400;
+obj_player.y = 1184;
 </string>
           </argument>
         </arguments>
@@ -119,11 +168,38 @@ r = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Rendering 6 times a second
-if (r == 10) {r = 0; scr_render(); }
-else r++;
+            <string>///Draw Score + Boss Dead Alarm
+/*
+if (global.pause = 1)
+
+{
+draw_text(32, 32, "Score: " + string(global.points));
+}
+*/
 
 
+if room == rm_gameover
+   {
+    global.points = 0;
+   
+   }
+   
+if room == rm_w1_lvl1
+   {
+    global.planet = 1;
+   
+   }
+   
+   
+//Boss Stuff
+
+if (global.bossdead = 1) {
+
+alarm[2] = 60;
+global.bossdead = 0;
+
+
+}
 </string>
           </argument>
         </arguments>
@@ -155,20 +231,75 @@ global.shines = 0;
 global.checkpointR = 0;
 }
 
-if (room == rm_level2) {
+if (room == rm_w1_lvl7) {
 global.totalshines -= 12;
 global.stars -= 82;
 }
 
-if (room == rm_level3) {
+if (room == rm_w1_lvl8) {
 global.totalshines -= 12;
 global.stars -= 82;
 }
 
-if (room == rm_level4) {
+if (room == rm_w1_lvl9) {
 global.totalshines -= 12;
 global.stars -= 82;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw score
+draw_set_color(c_white);
+draw_set_font(fnt_General);
+draw_text(32, 32, "Stars: " + string(global.stars));
+draw_text(32, 64, "Shines: " + string(global.shines) + "/" + string(global.shinerequirement));
+//draw_text(32, 64, "Fps: " + string(fps_real));
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="70">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_white);
+draw_set_font(fnt_General);
+
 </string>
           </argument>
         </arguments>

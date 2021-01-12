@@ -93,7 +93,6 @@ alarm[1] +=1
 exit;
 }
 
-
 if collision_circle(x, y, 250, obj_player, false, true)
     {
 hiveactive = 1;
@@ -102,6 +101,7 @@ hiveactive = 1;
 if !collision_circle(x, y, 250, obj_player, false, true)
     {
 hiveactive = 0;
+audio_stop_sound(snd_buzz);
 }
 </string>
           </argument>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.4
+            <string>image_speed = 0.04
 friendstatus = 0;
 </string>
           </argument>
@@ -83,12 +83,14 @@ if (global.friends = 0) {
 
 if (global.friends = 1) {
 
+    sprite_index = spr_truefriendhelp2
     friendstatus = 1;
 
 }
 
 if (global.friends = 2) {
 
+    sprite_index = spr_truefriendhelp3
     friendstatus = 2;
 
 }
@@ -123,7 +125,7 @@ if (global.friends = 3) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_score) {    
+            <string>with (obj_gamemanager) {    
 global.points += 8;
 if (global.friends &lt; 3) {
 global.friends += 1;

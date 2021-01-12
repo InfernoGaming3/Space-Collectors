@@ -113,17 +113,19 @@ draw_set_blend_mode(bm_normal);
             <string>if (global.pause) exit;
 
 //Visible at Day
-if (global.daytype = "day") { 
-
-visible = true;
-
+//DayNight System
+if global.world = "World1" {
+    if global.daytype = "day" {
+    
+        visible = true;
+    }
+    if global.daytype = "night" {
+    
+        visible = false;
+    
+    }
 }
 
-if (global.daytype = "night") { 
-
-visible = false;
-
-}
 
 //Turn to The Players Direction
 
@@ -134,6 +136,7 @@ if( x_to_player != 0 )
 }
 
 //Colliding With Player
+if global.daytype = "day" || global.world != "World1" {
 if (place_meeting(x,y,obj_player))
     {
     if (global.invincibility = 0) 
@@ -178,7 +181,7 @@ if (place_meeting(x,y,obj_player))
                 }
         }
     }
-
+}
 
 
 //Vertical Collision

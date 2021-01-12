@@ -70,76 +70,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.levelscompleted &gt;= 1 sprite_index = spr_blueteleporter_closed
-
-if room == rm_level1hub
+            <string>if room == rm_w1_hub
    {
-    if (global.levelscompleted = 0) {
-        if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-
-        }
-   }
-   
-   if room == rm_level1hubs
-   {
-    if (global.levelscompleted = 0) {
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.checkpointR = 0;
-                room_goto (rm_introduction4s);
-                
-            }
-        }
-   }
-   
-   if room == rm_level2
-   {
-    if (global.shines &gt;= 12) 
-        {
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.checkpointR = 0;
-                room_goto (rm_level1hub);
-            }
-
-        }
-   }
- 
-
-
-if room == rm_level4
-   {
-    if (global.stars &gt;= 355) 
+    if (global.stars &gt;= 230) 
         {
             visible = true;
             if (place_meeting(x,y,obj_player))
             {
-                obj_player.x = 2176;
-                obj_player.y = 640;
+                obj_player.x = 864;
+                obj_player.y = 288;
             }
 
         }

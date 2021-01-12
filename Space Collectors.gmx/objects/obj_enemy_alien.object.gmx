@@ -87,7 +87,6 @@ alarm[1] +=1
 exit;
 }
 
-
 if (instance_exists(obj_player)){
 var x_to_player = x - obj_player.x;
 if( x_to_player != 0 )

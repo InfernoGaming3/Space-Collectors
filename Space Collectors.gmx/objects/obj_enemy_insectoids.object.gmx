@@ -90,6 +90,15 @@ alarm[0] = 10;
             <kind>1</kind>
             <string>if (global.pause) exit;
 
+//DayNight System
+if global.world = "World1" {
+if global.daytype = "night" {
+
+    instance_destroy()
+}
+}
+
+
 //Facing the Player
 if (instance_exists(obj_player)){
 var x_to_player = x - obj_player.x;

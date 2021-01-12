@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_wall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,12 @@
             <kind>1</kind>
             <string>image_speed = 0.4
 global.ufocall = 0;
+dropdownufo = 0;
+
+if dropdownufo = 1 {
+motion_set(270, 4);
+image_speed = 0.2
+}
 </string>
           </argument>
         </arguments>
@@ -138,7 +144,7 @@ if (instance_exists(obj_player)){
 move_towards_point( obj_player.x, obj_player.y, 5 ); 
 }
 }
-
+if (global.ufocall = 1) {
 //Colliding With Player
 if (place_meeting(x,y,obj_player))
     {
@@ -150,6 +156,18 @@ if (place_meeting(x,y,obj_player))
     global.ufocall = 0; 
     alarm[0] = 15
     }
+}
+
+
+//Drop Down Ufo
+
+if dropdownufo = 1 {
+motion_set(270, 4);
+image_speed = 0.2
+}
+
+
+
 </string>
           </argument>
         </arguments>

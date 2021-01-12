@@ -86,12 +86,6 @@ if (place_meeting(x,y,obj_attackeffect))
         global.daytype = "night" sprite_index = spr_moonblock
         background_index[0] = bg_darkgreenhouse;
         alarm[0] = 40;
-        obj_player.x = 736;
-        obj_player.y = 2873;
-        global.checkpoint = id;
-        global.checkpointx = x;
-        global.checkpointy = y;
-        global.checkpointR = room;
         }
         }
         
@@ -110,12 +104,6 @@ if (place_meeting(x,y,obj_attackeffect))
         global.daytype = "day" sprite_index = spr_sunblock
         background_index[0] = bg_greenhouse;
         alarm[0] = 40;
-        obj_player.x = 736;
-        obj_player.y = 1689;
-        global.checkpoint = id;
-        global.checkpointx = x;
-        global.checkpointy = y;
-        global.checkpointR = room;
         }
         }
         

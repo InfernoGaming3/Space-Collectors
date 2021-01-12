@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>vsp = 0;
 hsp = 0;
-image_speed = 0.4;
+image_speed = 0.09;
 
 if (global.friends &gt;= 1) {
 
@@ -171,6 +171,10 @@ if (global.friends = 0) {
     instance_change(obj_truefrienddeath, true);
 
 }
+
+
+//Delete Self if more than 2 Hearts
+if instance_number(obj_truefriendfollower) &gt; 1 instance_destroy(self);
 
 </string>
           </argument>

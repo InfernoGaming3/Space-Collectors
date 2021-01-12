@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if global.levelscompleted &gt;= 1 sprite_index = spr_darkblueteleporter_closed
 
-if room == rm_introduction3
+if room == rm_w2_lvl3
    {
             if (place_meeting(x,y,obj_player))
             {
@@ -49,7 +49,7 @@ if room == rm_introduction3s
         }
    }
    
-if room == rm_introduction5
+if room == rm_w2_lvl5
    {
             if (place_meeting(x,y,obj_player))
             {

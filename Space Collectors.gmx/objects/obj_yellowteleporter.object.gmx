@@ -48,8 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.levelscompleted &gt;= 4 sprite_index = spr_yellowteleporter_closed
-if global.levelscompleted &lt;= 2 sprite_index = spr_yellowteleporter_closed
+            <string>if global.levelscompleted &gt;= 3 sprite_index = spr_yellowteleporter_closed
+if global.levelscompleted &lt;= 1 sprite_index = spr_yellowteleporter_closed
 
 if room == rm_level1hub
    {

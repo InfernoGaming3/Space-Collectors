@@ -33,6 +33,30 @@ image_speed = 0.4;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_text("Please don't be late on our Temple visit, we need to get our deed done quickly.", 0.4,view_xview + view_wview/2 - 200, view_yview + view_hview/2 + 150);
+alarm[0] = 200;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -75,7 +99,7 @@ alarm[0] = 5;
           <argument>
             <kind>1</kind>
             <string>if image_alpha &gt; 0 image_alpha -= 0.01;
-alarm[1] = 5;
+alarm[0] = 5;
 </string>
           </argument>
         </arguments>
@@ -137,12 +161,20 @@ if image_alpha &gt; 0 image_alpha -= 0.01;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if room == rm_intro9 {
+if talked = 0 {
+scr_text("Greetings, I am the Narrator. Come with me and I will help you along with your journey through the galaxy.", 0.4,view_xview + view_wview/2 - 280, view_yview + view_hview/2 - 200);
+talked = 1;
+alarm[0] = 300;
+}
+}
+
+
 if room == rm_bosss {
 if talked = 0 {
-scr_text("Greetings, I am the Narrator. Come with me and I will help you along with your journey through the galaxy.", 0.4,view_xview + view_wview/2 - 200, view_yview + view_hview/2 + 150);
+scr_text("If you meet me anywhere, you're doing the right thing. And I commend you for that sir.", 0.4,view_xview + view_wview/2 - 200, view_yview + view_hview/2 + 150);
 talked = 1;
-alarm[0] = 200;
+alarm[2] = 100;
 }
 }
 

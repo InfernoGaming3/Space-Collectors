@@ -28,7 +28,7 @@
             <string>///Initialize Variables
 
 dir = -1;
-movespeed = 4;
+if global.world != "World2" movespeed = 2 else movespeed = 0;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
@@ -36,6 +36,33 @@ image_speed = 0.4;
 fearofheights = 1;
 koedblocky = 0;
 
+if global.world = "World2" sprite_index = spr_enemy_santablocky;
+if global.world = "World2" alarm[1] = 100;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sprite_index = spr_enemy_santablockyjump;
+vsp = -7;
+alarm[1] = 120;
 </string>
           </argument>
         </arguments>
@@ -82,24 +109,27 @@ koedblocky = 0;
           <argument>
             <kind>1</kind>
             <string>if (global.pause) exit;
+
+//Movement + Gravity
 hsp = dir * movespeed;
 vsp += grav;
 
-//Visible at Day
-if (global.daytype = "day") { 
-
-visible = true;
-
-}
-
-if (global.daytype = "night") { 
-
-visible = false;
-
-}
-
 //Face where its going
 image_xscale = dir;
+
+//Visible at Day
+//DayNight System
+if global.world = "World1" {
+    if global.daytype = "day" {
+    
+        visible = true;
+    }
+    if global.daytype = "night" {
+    
+        visible = false;
+    
+    }
+}
 
 //Stunned by the Player
 
@@ -111,7 +141,7 @@ if (place_meeting(x,y,obj_attackeffect))
         
         movespeed = 0;
         hsp = 0;
-        sprite_index = spr_enemy_blockyrekt
+        if global.world != "World2" sprite_index = spr_enemy_blockyrekt else instance_destroy();
         instance_create(x-15, y-10, obj_electriceffectdisappear);
         koedblocky = 1;
         alarm[0] = 25;
@@ -142,6 +172,7 @@ if (place_meeting(x,y+vsp,obj_wall))
     {
         y += sign(vsp);
     }
+    if global.world = "World2" sprite_index = spr_enemy_santablocky;
     vsp = 0;
     if (fearofheights) &amp;&amp; !position_meeting(x+(sprite_width/2), y+(sprite_height/2)+8, obj_wall)
         {
@@ -151,6 +182,7 @@ if (place_meeting(x,y+vsp,obj_wall))
 y += vsp;
 
 //Colliding With Player
+if global.daytype = "day" || global.world != "World1" {
 if (place_meeting(x,y,obj_player))
     {
     if (global.invincibility = 0) 
@@ -193,7 +225,7 @@ if (place_meeting(x,y,obj_player))
                 }
         }
     }
-
+}
 
 </string>
           </argument>

@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.world = "NoWorld";
-global.daytype = "day";
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -50,18 +48,18 @@ global.daytype = "day";
           <argument>
             <kind>1</kind>
             <string>///Certain Loops
-if global.world = "World2"
+if global.world = "World3"
    {
-     if !audio_is_playing(snd_world2themei)
+     if !audio_is_playing(snd_world3themei)
         {
-     if !audio_is_playing(snd_world2theme)
+     if !audio_is_playing(snd_world3theme)
         {
-        audio_play_sound(snd_world2theme, 1, false);
+        audio_play_sound(snd_world3theme, 1, false);
         }
      }
     }
     
-if room == rm_boss
+if room == rm_w1_boss
    {
      if !audio_is_playing(snd_boss1themeintro)
         {
@@ -121,8 +119,45 @@ if global.daytype = "night" {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>//The Moon
+      if global.world = "World0"
+   {
+   if room != rm_intro10 {
+    if room != rm_intro8 &amp;&amp; room != rm_intro9 {
+        if !audio_is_playing(snd_maintheme) {
+            audio_stop_all();
+            audio_play_sound(snd_maintheme, 1, true);
+                }
+            }
+        }
+    }
 
+//The Moon Caverns
+      if global.world = "World0"
+   {
+    if room != rm_intro10 {
+        if room == rm_intro8 || room == rm_intro9 {
+        if !audio_is_playing(snd_mainthemecavern) {
+            audio_stop_all();
+            audio_play_sound(snd_mainthemecavern, 1, true);
+                }
+            }
+        }
+    }
+    
+//The Moon Remains
+      if global.world = "World0"
+   {
+    if room == rm_intro10 {
+    if !audio_is_playing(snd_mainthemeempty) {
+        audio_stop_all();
+        audio_play_sound(snd_mainthemeempty, 1, true);
+            }
+        }
+    }
+    ///Set Music
+
+//Title
 if room = rm_titlescreen
    {
     audio_stop_all();
@@ -137,15 +172,9 @@ if room = rm_titlescreen
     }
    }
    
-      if global.world = "World0"
-   {
-    if !audio_is_playing(snd_maintheme) {
-        audio_stop_all();
-        audio_play_sound(snd_maintheme, 1, true);
-        }
-    }
+
    
-   
+//Greenhouse  
    if global.world = "World1"
    {
    if global.daytype = "day" {
@@ -162,15 +191,7 @@ if room = rm_titlescreen
    }
    }
    
-    if global.world = "World2"
-   {
-   if !audio_is_playing(snd_world2themei) &amp;&amp; !audio_is_playing(snd_world2theme)  {
-       audio_stop_all();
-       audio_play_sound(snd_world2themei, 1, false);
-        }
-   }
-    
-   if room = rm_miniboss
+      if room = rm_miniboss
    {
    if !audio_is_playing(snd_boss1theme) {
         audio_stop_all();
@@ -178,7 +199,7 @@ if room = rm_titlescreen
     }
    }
    
-      if room = rm_boss
+         if room = rm_w1_boss
    {
    if !audio_is_playing(snd_boss1theme) &amp;&amp; !audio_is_playing(snd_boss1themeintro) {
         audio_stop_all();
@@ -186,14 +207,62 @@ if room = rm_titlescreen
     }
    }
    
-         if room = rm_w3_lvl1
+//Icebound Area
+    if global.world = "World2"
+    {
+        if room != rm_w2_hub {
+        if room != rm_w2_boss {
+        if !audio_is_playing(snd_world2theme) {
+            audio_stop_all();
+            audio_play_sound(snd_world2theme, 1, true);
+            }
+            }
+        }
+    }
+    
+    if global.world = "World2"
+    {
+        if room = rm_w2_hub {
+        if room != rm_w2_boss {
+        if !audio_is_playing(snd_world2themecavern) {
+            audio_stop_all();
+            audio_play_sound(snd_world2themecavern, 1, true);
+            }
+            }
+        }
+    }
+        if global.world = "World2"
+    {
+        if room = rm_w2_boss {
+        if !audio_is_playing(snd_world2themeboss) {
+            audio_stop_all();
+            audio_play_sound(snd_world2themeboss, 1, true);
+            }
+        }
+    }
+   
+   
+//Industrial Temple
+   
+    if global.world = "World3"
+   {
+   if !audio_is_playing(snd_world3themei) &amp;&amp; !audio_is_playing(snd_world3theme)  {
+       audio_stop_all();
+       audio_play_sound(snd_world3themei, 1, false);
+        }
+   }
+    
+//SteamBoat Works
+   
+         if room = rm_w4_lvl1
    {
    if !audio_is_playing(snd_outsideboat) {
         audio_stop_all();
         audio_play_sound(snd_outsideboat, 1, true);
     }
    }
-    
+   
+//SteamBoat Water
       if room = rm_seatest
    {
    if !audio_is_playing(snd_oceancity) {
@@ -201,6 +270,8 @@ if room = rm_titlescreen
         audio_play_sound(snd_oceancity, 1, true);
     }
    }
+   
+//S
    
       if room = rm_introduction3s
    {
@@ -225,7 +296,7 @@ if room = rm_titlescreen
     }
    }
    
-    if room = rm_introduction5
+    if room = rm_w2_lvl5
    {
    audio_stop_sound(snd_s1theme);
    }

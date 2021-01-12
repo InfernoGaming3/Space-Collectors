@@ -28,12 +28,14 @@
             <string>///Initialize Variables
 
 dir = -1;
-movespeed = 3;
+movespeed = 5;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
 image_speed = 0.2;
 enemystunned = 0;
+
+if global.world = "World2" sprite_index = spr_enemy_icyspiny;
 </string>
           </argument>
         </arguments>
@@ -58,7 +60,7 @@ enemystunned = 0;
             <kind>1</kind>
             <string>enemystunned = 0;
 instance_destroy(obj_electriceffect);
-sprite_index = spr_enemy_spike;
+if global.world != "World2" sprite_index = spr_enemy_spike else sprite_index = spr_enemy_icyspiny;
 </string>
           </argument>
         </arguments>
@@ -82,6 +84,15 @@ sprite_index = spr_enemy_spike;
           <argument>
             <kind>1</kind>
             <string>if (global.pause) exit;
+//Icy Spiny Movement
+
+if global.world = "World2" {
+    if place_meeting(x,y+1,obj_iceblock) || place_meeting(x,y+1,obj_iceblockwall)  {
+    sprite_index = spr_enemy_rotateicyspiny;
+    hsp = dir * movespeed;
+    vsp += grav;
+    }
+}
 
 //Stunned by the Player
 
@@ -166,6 +177,8 @@ if (place_meeting(x,y+vsp,obj_wall))
     vsp = 0;
 }
 y += vsp;
+
+
 
 
 </string>

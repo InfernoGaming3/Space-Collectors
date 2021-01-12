@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Colliding With Player
+            <string>///Colliding With Player
 if (place_meeting(x,y,obj_player)) || (place_meeting(x,y,obj_buddy_colonel))
     {
 

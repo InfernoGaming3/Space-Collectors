@@ -824,7 +824,6 @@
     <instance objName="obj_wall" x="6080" y="1376" name="inst_FFD077E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="6112" y="1376" name="inst_BED6D689" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="6176" y="1376" name="inst_BEA8586E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_teleporter" x="6240" y="1312" name="inst_62B65503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1856" y="288" name="inst_0935E481" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3648" y="416" name="inst_BAF35298" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1184" y="544" name="inst_C7BF2D40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -866,6 +865,9 @@
     <instance objName="obj_wall" x="1088" y="352" name="inst_0A5FB92A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1152" y="512" name="inst_FB438348" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_buddy_colonel" x="160" y="288" name="inst_E544B40F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_blocky" x="352" y="384" name="inst_E22D168E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_blocky" x="576" y="384" name="inst_6728BD21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_blocky" x="704" y="384" name="inst_AE432FB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

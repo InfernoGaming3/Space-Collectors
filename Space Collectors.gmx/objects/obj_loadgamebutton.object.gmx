@@ -78,6 +78,8 @@ global.checkpoint = id;
 global.checkpointx = x;
 global.checkpointy = y;
 global.checkpointR = room;
+global.Reassembling = true;
+global.Bits = 9;
 scr_loadgame();
 
 

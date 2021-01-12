@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if collision_circle(x, y, 160, obj_ufomap, false, true)
    {
-    global.sundirection = 2;
+    global.sundirection = 3;
    }
 </string>
           </argument>

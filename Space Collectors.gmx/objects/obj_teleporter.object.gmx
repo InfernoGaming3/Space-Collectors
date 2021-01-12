@@ -51,43 +51,7 @@ Originaly = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room == rm_introduction
-{
-room_goto (rm_introduction2);
-global.Reassembling = true;
-}
-
-if room == rm_introduction2
-{
-room_goto (rm_introduction3);
-global.Reassembling = true;
-}
-
-if room == rm_introduction3
-{
-room_goto (rm_introduction4);
-global.Reassembling = true;
-}
-
-if room == rm_introduction4
-{
-room_goto (rm_introduction5);
-global.Reassembling = true;
-}
-
-if room == rm_introduction5
-{
-room_goto (rm_level1hub);
-global.Reassembling = true;
-}
-
-if room == rm_level1hub
-{
-room_goto (rm_boss);
-global.daytype = ""
-global.Reassembling = true;
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -109,94 +73,7 @@ global.Reassembling = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room == rm_introduction
-   {
-    if (global.shines &gt;= 4) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-        }
-   }
-   
-if room == rm_introduction2
-   {
-    if (global.shines &gt;= 6) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-        }
-   }
-   
-if room == rm_introduction3
-   {
-    if (global.shines &gt;= 8) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-        }
-   }
-   
-if room == rm_introduction3s
+            <string>if room == rm_introduction3s
    {
     if (global.shines &gt;= 8) 
         {
@@ -209,37 +86,6 @@ if room == rm_introduction3s
                 global.module = 1;
                 room_goto (rm_introduction4);
             }
-        }
-   }
-   
-   
-if room == rm_introduction4
-   {
-    if (global.shines &gt;= 8) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-
         }
    }
     
@@ -257,39 +103,7 @@ if room == rm_introduction4s
             }
 
         }
-   }
-   
-if room == rm_introduction5
-   {
-    if (global.shines &gt;= 10) 
-        {
-            sprite_index = spr_teleporter
-            if (place_meeting(x,y,obj_player))
-            {
-                scr_savegame();
-                global.shines = 0;
-                global.roomstars = 0;
-                global.checkpointR = 0;
-                global.Reassembling = false;
-                alarm[0] = 90;
-                with(obj_player) {
-                
-                global.Bits = 9
-                BitsCreated = 0
-                
-                while BitsCreated &lt; global.Bits {
-                
-                    NewBit = instance_create(x,y,obj_playerchunk)
-                    BitsCreated += 1
-                    }     
-                instance_destroy();   
-                } 
-            }
-
-        }
-   }
-   
-   
+   }  
          if room == rm_introduction5s
    {
     if (global.shines &gt;= 10) 

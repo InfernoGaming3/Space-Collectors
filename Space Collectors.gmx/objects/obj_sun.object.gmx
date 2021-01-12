@@ -25,8 +25,100 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.sundirection = 0;
-global.gamestart = 1;
+            <string>///Initialize Sundirection and the first cutscene
+global.sundirection = 0;
+global.cutscene = 1;
+
+image_speed = 0.09;
+sprite_index = spr_sunfire;
+
+alarm[0] = 140;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (firing = 1) {
+instance_create(x,y+55,obj_fire);
+alarm[2] = 10;
+with(obj_fire) move_towards_point(obj_themoon.x,obj_themoon.y,12);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sun finished burning moon
+firing = 0;
+sprite_index = spr_sun;
+global.cutscene = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sun burning moon
+sprite_index = spr_sunburn;
+
+firing = 1;
+instance_create(x,y+55,obj_fire);
+alarm[2] = 5;
+
+with(obj_fire) move_towards_point(obj_themoon.x,obj_themoon.y,10);
+
+
+alarm[1] = 50;
 </string>
           </argument>
         </arguments>
@@ -49,7 +141,8 @@ global.gamestart = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.sundirection = 0
+            <string>if global.cutscene = 0 {
+if global.sundirection = 0
 {
     sprite_index = spr_sun
 }
@@ -77,6 +170,7 @@ if global.sundirection = 4
 if global.sundirection = 5
 {
     sprite_index = spr_sun6
+}
 }
 </string>
           </argument>
