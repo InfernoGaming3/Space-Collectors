@@ -6,27 +6,37 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Music">
-      <sound>sound\snd_endingtheme</sound>
-      <sound>sound\snd_gameover</sound>
-      <sound>sound\snd_titlescreen</sound>
-      <sound>sound\snd_maintheme</sound>
-      <sound>sound\snd_map1theme</sound>
-      <sound>sound\snd_boss1theme</sound>
-      <sound>sound\snd_boss1themeintro</sound>
-      <sound>sound\snd_world1theme</sound>
-      <sound>sound\snd_world2theme</sound>
-      <sound>sound\snd_world2themei</sound>
-      <sound>sound\snd_solarpowertheme</sound>
-      <sound>sound\snd_s1theme</sound>
-      <sound>sound\snd_s2theme</sound>
-      <sound>sound\snd_book</sound>
-      <sound>sound\snd_book2</sound>
-      <sound>sound\snd_world1themenight</sound>
-      <sound>sound\snd_world2templetheme</sound>
-      <sound>sound\snd_world2rubble</sound>
-      <sound>sound\snd_outsideboat</sound>
-      <sound>sound\sound34</sound>
-      <sound>sound\snd_oceancity</sound>
+      <sounds name="WorldThemes">
+        <sound>sound\snd_maintheme</sound>
+        <sound>sound\snd_world1theme</sound>
+        <sound>sound\snd_world1themenight</sound>
+        <sound>sound\snd_world2theme</sound>
+        <sound>sound\snd_world2themecavern</sound>
+        <sound>sound\snd_world2themeboss</sound>
+        <sound>sound\snd_world3themei</sound>
+        <sound>sound\snd_world3theme</sound>
+        <sound>sound\snd_world3templetheme</sound>
+        <sound>sound\snd_world3rubble</sound>
+        <sound>sound\snd_boss1themeintro</sound>
+        <sound>sound\snd_boss1theme</sound>
+        <sound>sound\snd_outsideboat</sound>
+        <sound>sound\snd_oceancity</sound>
+        <sound>sound\snd_mainthemecavern</sound>
+        <sound>sound\snd_mainthemeempty</sound>
+      </sounds>
+      <sounds name="Unused">
+        <sound>sound\snd_endingtheme</sound>
+        <sound>sound\snd_gameover</sound>
+        <sound>sound\snd_solarpowertheme</sound>
+        <sound>sound\snd_s1theme</sound>
+        <sound>sound\snd_s2theme</sound>
+        <sound>sound\snd_book</sound>
+        <sound>sound\snd_book2</sound>
+      </sounds>
+      <sounds name="Title">
+        <sound>sound\snd_titlescreen</sound>
+        <sound>sound\snd_map1theme</sound>
+      </sounds>
     </sounds>
     <sounds name="Sounds">
       <sound>sound\snd_jump</sound>
@@ -96,10 +106,11 @@
         <sprite>sprites\spr_buddy_colonelcrouch</sprite>
         <sprite>sprites\spr_buddy_colonelroll</sprite>
       </sprites>
+      <sprite>sprites\spr_camera</sprite>
     </sprites>
     <sprites name="objects">
       <sprite>sprites\spr_wall</sprite>
-      <sprite>sprites\spr_walllground</sprite>
+      <sprite>sprites\spr_wallground</sprite>
       <sprite>sprites\spr_slopel</sprite>
       <sprite>sprites\spr_sloper</sprite>
       <sprite>sprites\spr_halfwall</sprite>
@@ -160,6 +171,21 @@
       <sprites name="lab blocks">
         <sprite>sprites\spr_lab_block_1b</sprite>
         <sprite>sprites\spr_lab_block_0_5b</sprite>
+        <sprite>sprites\spr_grassblockcollisions</sprite>
+      </sprites>
+      <sprites name="tiles">
+        <sprite>sprites\spr_moonwall</sprite>
+        <sprite>sprites\spr_moonwallb</sprite>
+        <sprite>sprites\spr_moonwallsr</sprite>
+        <sprite>sprites\spr_moonwallsl</sprite>
+        <sprite>sprites\spr_icewall</sprite>
+        <sprite>sprites\spr_icewallb</sprite>
+        <sprite>sprites\spr_icewallsl</sprite>
+        <sprite>sprites\spr_icewallsr</sprite>
+        <sprite>sprites\spr_iceblock</sprite>
+        <sprite>sprites\spr_iceblockwall</sprite>
+        <sprite>sprites\spr_darkiceblock</sprite>
+        <sprite>sprites\spr_darkiceblockwall</sprite>
       </sprites>
     </sprites>
     <sprites name="enemies">
@@ -197,6 +223,8 @@
       <sprite>sprites\spr_enemy_patrodinguspike</sprite>
       <sprite>sprites\spr_enemy_patrodinguspikesucceed</sprite>
       <sprite>sprites\spr_enemy_patrodinguspikeprojectile</sprite>
+      <sprite>sprites\spr_enemy_icyspiny</sprite>
+      <sprite>sprites\spr_enemy_rotateicyspiny</sprite>
       <sprite>sprites\spr_enemy_stealthblockwood</sprite>
       <sprite>sprites\spr_enemy_stealthblockwoodpop</sprite>
       <sprite>sprites\spr_enemy_stealthblockgrass</sprite>
@@ -215,6 +243,8 @@
       <sprite>sprites\spr_flyinglizard</sprite>
       <sprite>sprites\spr_flyinglizard_jump</sprite>
       <sprite>sprites\spr_enemy_blocky</sprite>
+      <sprite>sprites\spr_enemy_santablocky</sprite>
+      <sprite>sprites\spr_enemy_santablockyjump</sprite>
       <sprite>sprites\spr_enemy_blockyrekt</sprite>
       <sprite>sprites\spr_enemy_blockyhurt</sprite>
       <sprite>sprites\spr_enemy_incinerator</sprite>
@@ -241,9 +271,18 @@
         <sprite>sprites\spr_boss_solarpower</sprite>
         <sprite>sprites\spr_boss_solarpower_rotate</sprite>
         <sprite>sprites\spr_boss_solarpower_hit</sprite>
-        <sprite>sprites\spr_boss_SrPrickle</sprite>
-        <sprite>sprites\spr_boss_SrPickleRun</sprite>
+        <sprite>sprites\spr_boss_sheriff</sprite>
+        <sprite>sprites\spr_boss_sheriffrun</sprite>
+        <sprite>sprites\spr_boss_sheriffshoot</sprite>
+        <sprite>sprites\spr_boss_sheriffshootup</sprite>
         <sprite>sprites\spr_boss_solarpower_petal</sprite>
+        <sprite>sprites\spr_boss_golem</sprite>
+        <sprite>sprites\spr_boss_golemrun</sprite>
+        <sprite>sprites\spr_boss_golemhurt</sprite>
+        <sprite>sprites\spr_boss_golemactivate</sprite>
+        <sprite>sprites\spr_boss_golemhead</sprite>
+        <sprite>sprites\spr_boss_headlessgolem</sprite>
+        <sprite>sprites\spr_boss_golemdead</sprite>
       </sprites>
     </sprites>
     <sprites name="collectables">
@@ -252,8 +291,10 @@
       <sprite>sprites\spr_shine</sprite>
       <sprite>sprites\spr_goldenshine</sprite>
       <sprite>sprites\spr_diamond</sprite>
-      <sprite>sprites\spr_truefriend</sprite>
       <sprite>sprites\spr_truefriendhelp</sprite>
+      <sprite>sprites\spr_truefriendhelp2</sprite>
+      <sprite>sprites\spr_truefriendhelp3</sprite>
+      <sprite>sprites\spr_truefriend</sprite>
       <sprite>sprites\spr_truefriend2</sprite>
       <sprite>sprites\spr_truefriend3</sprite>
       <sprite>sprites\spr_truefrienddeath</sprite>
@@ -280,12 +321,16 @@
       <sprite>sprites\spr_electriceffectdisappear</sprite>
       <sprite>sprites\spr_electriceffect</sprite>
       <sprite>sprites\spr_sun</sprite>
+      <sprite>sprites\spr_sunfire</sprite>
+      <sprite>sprites\spr_sunburn</sprite>
       <sprite>sprites\spr_sun2</sprite>
       <sprite>sprites\spr_sun3</sprite>
       <sprite>sprites\spr_sun4</sprite>
       <sprite>sprites\spr_sun5</sprite>
       <sprite>sprites\spr_sun6</sprite>
       <sprite>sprites\spr_greenplanet</sprite>
+      <sprite>sprites\spr_moon</sprite>
+      <sprite>sprites\spr_moonburn</sprite>
       <sprite>sprites\spr_desertplanet</sprite>
       <sprite>sprites\spr_waterplanet</sprite>
       <sprite>sprites\spr_iceplanet</sprite>
@@ -297,12 +342,14 @@
       <sprite>sprites\spr_sign2</sprite>
       <sprite>sprites\spr_sign3</sprite>
       <sprite>sprites\spr_sign4</sprite>
+      <sprite>sprites\spr_sign5</sprite>
       <sprite>sprites\spr_dash_smoke</sprite>
       <sprite>sprites\spr_smoke_land</sprite>
       <sprite>sprites\spr_worldmapenter</sprite>
       <sprite>sprites\spr_worldmapcomplete</sprite>
       <sprite>sprites\spr_worldmapclosed</sprite>
       <sprite>sprites\spr_spawnpoint</sprite>
+      <sprite>sprites\spr_fire</sprite>
     </sprites>
     <sprites name="Npcs">
       <sprite>sprites\spr_narrator</sprite>
@@ -313,26 +360,33 @@
   <backgrounds name="background">
     <background>background\bg_main</background>
     <background>background\bg_gameover</background>
-    <background>background\bg_title</background>
-    <background>background\bg_greenhouse</background>
-    <background>background\bg_darkgreenhouse</background>
-    <background>background\bg_desertexterior</background>
-    <background>background\bg_woodinterior</background>
-    <background>background\bg_boatexterior</background>
     <background>background\bg_greenhouseplanet</background>
     <background>background\bg_lab</background>
     <background>background\ts_main</background>
+    <background>background\bg_title</background>
+    <background>background\bg_boatexterior</background>
+    <backgrounds name="Worlds">
+      <background>background\bg_greenhouse</background>
+      <background>background\bg_darkgreenhouse</background>
+      <background>background\bg_icebound</background>
+      <background>background\bg_desertexterior</background>
+      <background>background\bg_woodinterior</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
     <script>scripts\scr_savegame.gml</script>
+    <script>scripts\scr_dssavegame.gml</script>
+    <script>scripts\scr_quote.gml</script>
     <script>scripts\scr_loadgame.gml</script>
     <script>scripts\scr_text.gml</script>
     <script>scripts\scr_render.gml</script>
+    <script>scripts\scr_warp.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_General</font>
+    <font>fonts\fnt_Butter</font>
   </fonts>
   <objects name="objects">
     <objects name="Player">
@@ -367,72 +421,62 @@
       <object>objects\obj_book</object>
     </objects>
     <objects name="Enemies">
-      <object>objects\obj_enemy_spike</object>
-      <object>objects\obj_enemy_uspike</object>
-      <object>objects\obj_enemy_particle</object>
-      <object>objects\obj_enemy_crazyparticle</object>
-      <object>objects\obj_enemy_insaneparticle</object>
-      <object>objects\obj_enemy_chaser</object>
-      <object>objects\obj_enemy_lurker</object>
-      <object>objects\obj_enemy_bountyhunter</object>
-      <object>objects\obj_enemy_crusher</object>
-      <object>objects\obj_enemy_floater</object>
-      <object>objects\obj_enemy_sleepfloater</object>
-      <object>objects\obj_enemy_cyclops</object>
-      <object>objects\obj_enemy_alien</object>
-      <object>objects\obj_enemy_rotatespike</object>
-      <object>objects\obj_enemy_blocky</object>
-      <object>objects\obj_enemy_blockytowers</object>
-      <object>objects\obj_stealthblock</object>
-      <object>objects\obj_enemy_mscrusher</object>
-      <object>objects\obj_enemy_eyeball</object>
-      <object>objects\obj_enemy_extendspike</object>
-      <object>objects\obj_enemy_extenduspike</object>
-      <object>objects\obj_enemy_patrodingspike</object>
-      <object>objects\obj_enemy_patrodinguspike</object>
-      <object>objects\obj_enemy_shroomin</object>
-      <object>objects\obj_enemy_turret</object>
-      <object>objects\obj_enemy_hive</object>
-      <object>objects\obj_enemy_insectoids</object>
-      <object>objects\obj_enemy_twinturret</object>
-      <object>objects\obj_enemy_star</object>
-      <object>objects\obj_neutral_robot</object>
-      <object>objects\obj_enemy_incinerator</object>
-      <object>objects\obj_enemy_incineratoru</object>
-      <object>objects\obj_enemy_stretcher</object>
-      <object>objects\obj_enemy_alieneatingplant</object>
       <objects name="Bosses">
         <object>objects\obj_boss_spinytrap</object>
         <object>objects\obj_enemy_rotatespikeboss</object>
         <object>objects\obj_enemy_rotatespikebosshit</object>
         <object>objects\obj_boss_solarpower</object>
+        <object>objects\obj_boss_golem</object>
+        <object>objects\obj_boss_sheriff</object>
         <object>objects\obj_boss_solarpower_petal</object>
         <object>objects\obj_flowerboss</object>
         <object>objects\obj_flowerboss_charged</object>
         <object>objects\obj_flowerwall</object>
+        <object>objects\obj_boss_golemhead</object>
+        <object>objects\obj_boss_headhitbox</object>
+      </objects>
+      <objects name="General">
+        <object>objects\obj_enemy_spike</object>
+        <object>objects\obj_enemy_uspike</object>
+        <object>objects\obj_enemy_particle</object>
+        <object>objects\obj_enemy_crazyparticle</object>
+        <object>objects\obj_enemy_insaneparticle</object>
+        <object>objects\obj_enemy_chaser</object>
+        <object>objects\obj_enemy_lurker</object>
+        <object>objects\obj_enemy_bountyhunter</object>
+        <object>objects\obj_enemy_floater</object>
+        <object>objects\obj_enemy_sleepfloater</object>
+        <object>objects\obj_enemy_cyclops</object>
+        <object>objects\obj_enemy_alien</object>
+        <object>objects\obj_enemy_blocky</object>
+        <object>objects\obj_stealthblock</object>
+        <object>objects\obj_enemy_crusher</object>
+        <object>objects\obj_enemy_mscrusher</object>
+        <object>objects\obj_enemy_extendspike</object>
+        <object>objects\obj_enemy_extenduspike</object>
+        <object>objects\obj_enemy_patrodingspike</object>
+        <object>objects\obj_enemy_patrodinguspike</object>
+        <object>objects\obj_enemy_rotatespike</object>
+        <object>objects\obj_enemy_star</object>
+      </objects>
+      <objects name="Greenhouse">
+        <object>objects\obj_enemy_hive</object>
+        <object>objects\obj_enemy_shroomin</object>
+        <object>objects\obj_enemy_insectoids</object>
+        <object>objects\obj_enemy_alieneatingplant</object>
+      </objects>
+      <objects name="Temple">
+        <object>objects\obj_neutral_robot</object>
+        <object>objects\obj_enemy_incinerator</object>
+        <object>objects\obj_enemy_incineratoru</object>
+        <object>objects\obj_enemy_stretcher</object>
+        <object>objects\obj_enemy_turret</object>
+        <object>objects\obj_enemy_twinturret</object>
+        <object>objects\obj_enemy_blockytowers</object>
+        <object>objects\obj_enemy_eyeball</object>
       </objects>
     </objects>
     <objects name="Objects">
-      <object>objects\obj_wall</object>
-      <object>objects\obj_wallground</object>
-      <object>objects\obj_wallillusion</object>
-      <object>objects\obj_wallgroundillusion</object>
-      <object>objects\obj_slopel</object>
-      <object>objects\obj_sloper</object>
-      <object>objects\obj_desertwall</object>
-      <object>objects\obj_desertwallground</object>
-      <object>objects\obj_woodwall</object>
-      <object>objects\obj_woodwallground</object>
-      <object>objects\obj_waterwall</object>
-      <object>objects\obj_waterwall2</object>
-      <object>objects\obj_waterwallground</object>
-      <object>objects\obj_waterslopel</object>
-      <object>objects\obj_watersloper</object>
-      <object>objects\obj_halfwall</object>
-      <object>objects\obj_platform</object>
-      <object>objects\obj_dissapearplatform</object>
-      <object>objects\obj_movingplatformh</object>
-      <object>objects\obj_movingplatformv</object>
       <object>objects\obj_cutscene_ufo</object>
       <object>objects\obj_swoop_ufo</object>
       <object>objects\par_ladder</object>
@@ -447,23 +491,45 @@
       <object>objects\obj_temple</object>
       <object>objects\obj_sunblock</object>
       <object>objects\obj_water</object>
+      <objects name="Ground">
+        <object>objects\obj_wall</object>
+        <object>objects\obj_wallground</object>
+        <object>objects\obj_wallillusion</object>
+        <object>objects\obj_wallgroundillusion</object>
+        <object>objects\obj_slopel</object>
+        <object>objects\obj_sloper</object>
+        <object>objects\obj_desertwall</object>
+        <object>objects\obj_desertwallground</object>
+        <object>objects\obj_woodwall</object>
+        <object>objects\obj_woodwallground</object>
+        <object>objects\obj_waterwall2</object>
+        <object>objects\obj_waterwall</object>
+        <object>objects\obj_waterwallground</object>
+        <object>objects\obj_watersloper</object>
+        <object>objects\obj_waterslopel</object>
+        <object>objects\obj_platform</object>
+        <object>objects\obj_halfwall</object>
+        <object>objects\obj_dissapearplatform</object>
+        <object>objects\obj_movingplatformh</object>
+        <object>objects\obj_movingplatformv</object>
+        <object>objects\obj_lab_block</object>
+        <object>objects\obj_moonwall</object>
+        <object>objects\obj_moonwallb</object>
+        <object>objects\obj_moonwallsl</object>
+        <object>objects\obj_moonwallsr</object>
+        <object>objects\obj_iceblock</object>
+        <object>objects\obj_iceblockwall</object>
+      </objects>
       <objects name="Warps">
         <object>objects\obj_basicwarp</object>
-        <object>objects\obj_warpholetele</object>
-        <object>objects\obj_warpholereciever</object>
         <object>objects\obj_teleporter</object>
-        <object>objects\obj_darkblueteleporter</object>
-        <object>objects\obj_yellowteleporter</object>
-        <object>objects\obj_redteleporter</object>
         <object>objects\obj_blueteleporter</object>
         <object>objects\obj_greenteleporter</object>
-        <object>objects\obj_pinkteleporter</object>
-        <object>objects\obj_orangeteleporter</object>
         <object>objects\obj_blackteleporter</object>
         <object>objects\obj_ufowarp</object>
-      </objects>
-      <objects name="lab blocks">
-        <object>objects\obj_lab_block</object>
+        <objects name="Reality Warps">
+          <object>objects\obj_warpholetele</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Projectiles">
@@ -487,14 +553,16 @@
       </objects>
       <objects name="World Map">
         <object>objects\obj_sun</object>
+        <object>objects\obj_themoon</object>
         <object>objects\obj_greenplanet</object>
+        <object>objects\obj_iceplanet</object>
         <object>objects\obj_desertplanet</object>
         <object>objects\obj_waterplanet</object>
-        <object>objects\obj_iceplanet</object>
         <object>objects\obj_nightplanet</object>
         <object>objects\obj_lavaplanet</object>
         <object>objects\obj_ufomap</object>
         <object>objects\obj_levelenter</object>
+        <object>objects\obj_fire</object>
       </objects>
       <objects name="GFX">
         <object>objects\obj_electriceffectdisappear</object>
@@ -507,79 +575,96 @@
         <object>objects\obj_colonel0</object>
       </objects>
       <object>objects\obj_debugmode</object>
-      <object>objects\obj_score</object>
-      <object>objects\obj_pause</object>
-      <object>objects\obj_bgm</object>
-      <object>objects\obj_friendtracker</object>
       <object>objects\obj_gamemanager</object>
+      <object>objects\obj_gamerender</object>
+      <object>objects\obj_bgm</object>
+      <object>objects\obj_pause</object>
       <object>objects\obj_lighting</object>
       <object>objects\obj_text</object>
       <object>objects\obj_piece</object>
+      <object>objects\obj_quote</object>
       <object>objects\obj_death</object>
       <object>objects\obj_sign1</object>
       <object>objects\obj_sign2</object>
       <object>objects\obj_sign3</object>
       <object>objects\obj_sign4</object>
+      <object>objects\obj_sign5</object>
       <object>objects\object154</object>
+      <object>objects\obj_camera</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Title">
+      <room>rooms\rm_bootup</room>
       <room>rooms\rm_titlescreen</room>
       <room>rooms\rm_options</room>
     </rooms>
     <rooms name="World 0 [Home]">
       <room>rooms\rm_intro1</room>
+      <room>rooms\rm_lab</room>
       <room>rooms\rm_intro2</room>
       <room>rooms\rm_intro3</room>
       <room>rooms\rm_intro4</room>
       <room>rooms\rm_intro5</room>
       <room>rooms\rm_intro6</room>
       <room>rooms\rm_intro7</room>
+      <room>rooms\rm_intro8</room>
+      <room>rooms\rm_intro9</room>
+      <room>rooms\rm_intro10</room>
     </rooms>
     <rooms name="World Map">
       <room>rooms\rm_galaxymap</room>
       <room>rooms\rm_cutscene</room>
-      <room>rooms\rm_movementtesting</room>
     </rooms>
     <rooms name="World 1 (GreenHouse)">
-      <room>rooms\rm_level1hub</room>
-      <room>rooms\rm_level1</room>
-      <room>rooms\rm_level1b</room>
-      <room>rooms\rm_level2</room>
-      <room>rooms\rm_level3</room>
-      <room>rooms\rm_level4</room>
+      <room>rooms\rm_w1_lvl1</room>
+      <room>rooms\rm_w1_lvl2</room>
+      <room>rooms\rm_w1_lvl3</room>
+      <room>rooms\rm_w1_lvl4</room>
+      <room>rooms\rm_w1_lvl5</room>
+      <room>rooms\rm_w1_lvl6</room>
+      <room>rooms\rm_w1_hub</room>
+      <room>rooms\rm_w1_lvl7</room>
+      <room>rooms\rm_w1_lvl8</room>
+      <room>rooms\rm_w1_lvl9</room>
+      <room>rooms\rm_w1_boss</room>
       <room>rooms\rm_miniboss</room>
-      <room>rooms\rm_boss</room>
-      <room>rooms\rm_introduction</room>
-      <room>rooms\rm_introduction2</room>
-      <room>rooms\rm_introduction3</room>
-      <room>rooms\rm_introduction4</room>
-      <room>rooms\rm_introduction5</room>
-      <room>rooms\rm_introduction3s</room>
-      <room>rooms\rm_introduction4s</room>
-      <room>rooms\rm_introduction5s</room>
-      <room>rooms\rm_level1hubs</room>
-      <room>rooms\rm_level2s</room>
-      <room>rooms\rm_level3s</room>
-      <room>rooms\rm_level4s</room>
       <room>rooms\rm_bosss</room>
     </rooms>
-    <rooms name="World 2 (Desert)">
+    <rooms name="World 2 [Icebound]">
       <room>rooms\rm_w2_lvl1</room>
       <room>rooms\rm_w2_lvl2</room>
       <room>rooms\rm_w2_lvl3</room>
-      <room>rooms\rm_w2_entrance</room>
+      <room>rooms\rm_w2_lvl4</room>
+      <room>rooms\rm_w2_lvl5</room>
+      <room>rooms\rm_w2_hub</room>
+      <room>rooms\rm_w2_boss</room>
+      <room>rooms\rm_introduction3s</room>
+      <room>rooms\rm_introduction4s</room>
+      <room>rooms\rm_introduction5s</room>
+      <room>rooms\rm_level2s</room>
+      <room>rooms\rm_level3s</room>
+      <room>rooms\rm_level4s</room>
     </rooms>
-    <rooms name="World 3 (SteamBoat]">
+    <rooms name="World 3 (Desert)">
       <room>rooms\rm_w3_lvl1</room>
+      <room>rooms\rm_w3_boss</room>
+      <room>rooms\rm_w3_lvl2</room>
+      <room>rooms\rm_w3_lvl3</room>
+      <room>rooms\rm_w3_entrance</room>
+      <room>rooms\rm_w3_lvl4alpha</room>
+      <room>rooms\rm_w3_lvl4beta</room>
+      <room>rooms\rm_w3_lvl4</room>
+      <room>rooms\rm_level1hubs</room>
+    </rooms>
+    <rooms name="World 4 (SteamBoat]">
+      <room>rooms\rm_w4_lvl1</room>
       <room>rooms\rm_seatest</room>
     </rooms>
     <rooms name="TestRooms">
       <room>rooms\rm_gameover</room>
-      <room>rooms\rm_lab</room>
+      <room>rooms\rm_movementtesting</room>
       <room>rooms\rm_world1map</room>
-      <room>rooms\rm_diamondroom</room>
       <room>rooms\rm_testroom</room>
       <room>rooms\rm_winscreen</room>
     </rooms>
